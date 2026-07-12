@@ -1,0 +1,2856 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1A1A1A">
+  <meta name="description" content="Pokok Pikiran Kebudayaan Daerah (PPKD) Provinsi Banten 2025 - Buku Lengkap">
+  <title>PPKD Banten 2025 · Buku Lengkap</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* ================================================================
+       ROOT & GLOBAL (diambil dari manuskrip.html)
+       ================================================================ */
+    :root {
+      --cream: #1A1A1A;
+      --cream2: #242424;
+      --cream3: #2E2E2E;
+      --white: #1E1E1E;
+      --brown-deep: #E8DDD0;
+      --brown-soft: #D4C5B5;
+      --brown-mid: #B8A99A;
+      --gold: #B8893A;
+      --gold-light: #D4A853;
+      --gold-pale: #E8D5B5;
+      --slate: #D0D0D0;
+      --slate-soft: #A0A0A0;
+      --slate-light: #707070;
+      --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.4);
+      --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.5);
+      --shadow-gold: 0 8px 32px rgba(184, 137, 58, 0.25);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --transition-base: 0.3s ease;
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.5rem;
+      --space-6: 2rem;
+      --space-7: 3rem;
+      --space-8: 4rem;
+      --text-sm: 0.875rem;
+      --text-md: 1rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--cream);
+      background-image: url('banten.jpeg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: var(--brown-deep);
+      line-height: 1.7;
+      transition: background var(--transition), color var(--transition);
+      overflow-x: hidden;
+    }
+
+    .body-overlay {
+      background: rgba(26, 26, 26, 0.40);
+      backdrop-filter: blur(1px);
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .container-book {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--cream2);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 10px;
+    }
+
+    /* Loader */
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+      gap: 20px;
+    }
+    .page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .loader-logo {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .loader-bar {
+      width: 200px;
+      height: 4px;
+      background: var(--cream3);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .loader-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      animation: loaderFill 1.8s ease forwards;
+    }
+    @keyframes loaderFill {
+      100% {
+        width: 100%;
+      }
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 14px 0;
+      transition: all var(--transition);
+      background: transparent;
+    }
+
+    .navbar.scrolled {
+      background: rgba(13, 13, 13, 0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      padding: 10px 0;
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #fff;
+      transition: color var(--transition);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+    .navbar.scrolled .navbar-brand {
+      color: #fff;
+      text-shadow: none;
+    }
+
+    .navbar-brand .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.1rem;
+      box-shadow: var(--shadow-gold);
+    }
+    .navbar-brand .brand-text span {
+      display: block;
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 0.6rem;
+      letter-spacing: 0.5px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .navbar.scrolled .navbar-brand .brand-text span {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    .navbar-links>li>a {
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #ffffff;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    .navbar-links>li>a:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--gold-light);
+    }
+    .navbar.scrolled .navbar-links>li>a {
+      color: #fff;
+      text-shadow: none;
+    }
+    .navbar.scrolled .navbar-links>li>a:hover {
+      background: rgba(184, 137, 58, 0.15);
+      color: var(--gold-light);
+    }
+
+    .navbar-links>li>a.buku-link {
+      background: rgba(184, 137, 58, 0.25);
+      border: 1px solid rgba(184, 137, 58, 0.3);
+      color: #fff;
+    }
+    .navbar-links>li>a.buku-link:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(184, 137, 58, 0.3);
+    }
+    .navbar.scrolled .navbar-links>li>a.buku-link {
+      background: var(--gold);
+      color: #fff;
+      border-color: var(--gold);
+    }
+    .navbar.scrolled .navbar-links>li>a.buku-link:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* Dropdown Sarana */
+    .has-drop {
+      position: relative;
+    }
+    .has-drop .navbar-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      min-width: 220px;
+      background: rgba(13, 13, 13, 0.95);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-medium);
+      padding: 6px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.25s ease;
+      list-style: none;
+      border: 1px solid rgba(184, 137, 58, 0.1);
+    }
+    .has-drop.open .navbar-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .has-drop .navbar-dropdown li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      transition: all 0.15s ease;
+    }
+    .has-drop .navbar-dropdown li a:hover {
+      background: rgba(184, 137, 58, 0.15);
+      color: var(--gold-light);
+    }
+    .has-drop .navbar-dropdown li a.active {
+      background: rgba(184, 137, 58, 0.15);
+      color: var(--gold-light);
+    }
+
+    /* Actions */
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-more {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: var(--font-sans);
+      backdrop-filter: blur(4px);
+    }
+    .btn-more:hover {
+      background: rgba(184, 137, 58, 0.2);
+      border-color: var(--gold);
+    }
+    .navbar.scrolled .btn-more {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown-more {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-more-content {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: rgba(13, 13, 13, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(184, 137, 58, 0.1);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-medium);
+      min-width: 200px;
+      padding: 6px;
+      z-index: 999;
+    }
+    .dropdown-more-content.open {
+      display: block;
+      animation: fadeIn 0.2s ease;
+    }
+    .dropdown-more-content a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      transition: all 0.15s ease;
+    }
+    .dropdown-more-content a i {
+      color: var(--gold-light);
+      width: 18px;
+      text-align: center;
+    }
+    .dropdown-more-content a:hover {
+      background: rgba(184, 137, 58, 0.15);
+      color: var(--gold-light);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      background: #fff;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+    .navbar.scrolled .hamburger span {
+      background: #fff;
+    }
+
+    /* Drawer */
+    .navbar-drawer {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 300px;
+      height: 100vh;
+      background: rgba(13, 13, 13, 0.97);
+      backdrop-filter: blur(16px);
+      padding: 80px 24px 30px;
+      overflow-y: auto;
+      transition: right 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      z-index: 999;
+      list-style: none;
+    }
+    .navbar-drawer.open {
+      right: 0;
+    }
+    .navbar-drawer ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .navbar-drawer .drawer-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 700;
+      padding: 12px 0 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .navbar-drawer a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.8);
+      transition: all 0.15s ease;
+    }
+    .navbar-drawer a:hover {
+      background: rgba(184, 137, 58, 0.15);
+      color: var(--gold-light);
+    }
+    .navbar-drawer a i {
+      width: 20px;
+      color: var(--gold-light);
+    }
+    .navbar-drawer a.active {
+      background: rgba(184, 137, 58, 0.15);
+      color: var(--gold-light);
+    }
+
+    /* ============================================================
+       PAGE HEADER
+       ============================================================ */
+    .page-header-custom {
+      padding: 9rem 0 3rem;
+      background: linear-gradient(135deg, rgba(44, 26, 14, 0.7) 0%, rgba(30, 58, 47, 0.7) 100%);
+      backdrop-filter: blur(4px);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(184, 137, 58, 0.1);
+    }
+
+    .page-header-custom .breadcrumb {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header-custom .breadcrumb a {
+      color: #D4A853;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .page-header-custom .breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .page-header-custom h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header-custom h1 .highlight {
+      color: #D4A853;
+    }
+
+    .page-header-custom p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin-top: 0.8rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ============================================================
+       BOOK STYLES (Dark Theme)
+       ============================================================ */
+    .book-wrapper {
+      padding: 40px 0 60px;
+    }
+
+    .book {
+      background: rgba(30, 30, 30, 0.92);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-medium);
+      padding: 40px 48px 48px;
+      border: 1px solid rgba(184, 137, 58, 0.12);
+    }
+
+    .book-cover {
+      text-align: center;
+      padding: 40px 20px 32px;
+      border-bottom: 2px solid rgba(184, 137, 58, 0.15);
+      margin-bottom: 32px;
+    }
+    .book-cover .cover-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .book-cover h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--brown-deep);
+      line-height: 1.15;
+      margin: 8px 0 6px;
+    }
+    .book-cover h1 .highlight { color: var(--gold); }
+    .book-cover .subtitle {
+      font-size: 1rem;
+      color: var(--slate-soft);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .book-cover .cover-year {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+    .book-cover .cover-decoration {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .book-cover .cover-decoration span {
+      display: inline-block;
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .toc {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: var(--radius-md);
+      padding: 20px 28px;
+      margin: 24px 0 32px;
+      border: 1px solid rgba(184, 137, 58, 0.1);
+    }
+    .toc h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--brown-deep);
+      margin-bottom: 12px;
+    }
+    .toc h2 i { color: var(--gold); margin-right: 8px; }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 24px;
+    }
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      font-size: 0.85rem;
+      color: var(--slate);
+      border-bottom: 1px dashed rgba(184, 137, 58, 0.08);
+    }
+    .toc-item a {
+      color: var(--slate);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .toc-item a:hover { color: var(--gold-light); }
+    .toc-item .page { color: var(--gold); font-weight: 600; }
+
+    .bab {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 2px solid rgba(184, 137, 58, 0.12);
+    }
+    .bab:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+    .bab .bab-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .bab .bab-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .bab .bab-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--brown-deep);
+    }
+    .bab .bab-sub {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--brown-deep);
+      margin: 20px 0 12px;
+      border-left: 4px solid var(--gold);
+      padding-left: 12px;
+    }
+    .bab .bab-sub-sm {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--brown-deep);
+      margin: 16px 0 8px;
+      padding-left: 4px;
+    }
+    .bab p {
+      font-size: 0.96rem;
+      line-height: 1.9;
+      color: var(--slate);
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+    .bab p strong { color: var(--brown-deep); }
+    .bab p .gold { color: var(--gold); font-weight: 600; }
+    .bab ul, .bab ol {
+      padding-left: 24px;
+      margin: 12px 0 20px;
+    }
+    .bab ul li, .bab ol li {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: var(--slate);
+      margin-bottom: 4px;
+    }
+    .bab ul li strong { color: var(--brown-deep); }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0 24px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(184, 137, 58, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .table-wrap table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      min-width: 400px;
+    }
+    .table-wrap th {
+      background: rgba(184, 137, 58, 0.15);
+      color: var(--brown-deep);
+      font-weight: 700;
+      padding: 8px 10px;
+      text-align: center;
+      border: 1px solid rgba(184, 137, 58, 0.08);
+      white-space: nowrap;
+    }
+    .table-wrap td {
+      padding: 6px 10px;
+      border: 1px solid rgba(184, 137, 58, 0.08);
+      vertical-align: middle;
+      color: var(--slate);
+    }
+    .table-wrap td:first-child { text-align: center; }
+    .table-caption {
+      font-size: 0.75rem;
+      color: var(--slate-light);
+      text-align: right;
+      padding: 4px 8px 6px;
+    }
+
+    .highlight-box {
+      background: rgba(184, 137, 58, 0.1);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+      border: 1px solid rgba(184, 137, 58, 0.12);
+    }
+    .highlight-box h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brown-deep);
+      margin-bottom: 4px;
+    }
+    .highlight-box h4 i { color: var(--gold); margin-right: 8px; }
+    .highlight-box ul {
+      padding-left: 20px;
+      margin-top: 4px;
+    }
+    .highlight-box ul li {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--slate);
+      list-style: disc;
+      margin-bottom: 2px;
+    }
+    
+    .highlight-box p {
+      font-size: 0.9rem;
+      color: var(--slate);
+      margin-bottom: 0;
+    }
+    .highlight-box p strong { color: var(--brown-deep); }
+
+    .quote {
+      background: rgba(184, 137, 58, 0.06);
+      border-left: 4px solid var(--gold);
+      padding: 14px 20px;
+      margin: 16px 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--slate-soft);
+      line-height: 1.8;
+    }
+    .quote .author {
+      margin-top: 4px;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--brown-deep);
+    }
+
+    .book-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(184, 137, 58, 0.12);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.6rem 1.6rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      border: 1px solid rgba(184, 137, 58, 0.15);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--slate);
+    }
+    .btn:hover {
+      background: rgba(184, 137, 58, 0.1);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #fff;
+      border: none;
+      box-shadow: var(--shadow-gold);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #9A7A2E, var(--gold));
+      box-shadow: 0 6px 28px rgba(184, 137, 58, 0.4);
+      transform: translateY(-2px);
+    }
+    .btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    /* ============================================================
+       BACK TO TOP
+       ============================================================ */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #fff;
+      border: none;
+      box-shadow: var(--shadow-gold);
+      cursor: pointer;
+      font-size: 1.1rem;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    #backToTop.visible { opacity: 1; transform: scale(1); }
+    #backToTop:hover { transform: scale(1.08) translateY(-2px); }
+
+    /* ============================================================
+       SCROLL PROGRESS
+       ============================================================ */
+    .progress {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 3px;
+      background: transparent;
+      z-index: 9999;
+    }
+    .progress .bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transition: width 0.1s ease;
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: rgba(13, 13, 13, 0.95);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 48px 0 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-brand .footer-logo {
+      font-size: 2rem;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gold-light);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-col ul li a {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-col ul li a i {
+      width: 16px;
+      font-size: 0.7rem;
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+      gap: 12px;
+    }
+
+    .footer-bottom .dot {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin: 0 8px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 1.1rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 992px) {
+      .book { padding: 32px 28px 36px; }
+      .book-cover h1 { font-size: 2.2rem; }
+      .toc-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .navbar-links { display: none; }
+      .hamburger { display: flex; }
+
+      .page-header-custom { padding: 7rem 0 2rem; }
+
+      .book { padding: 24px 18px 32px; }
+      .book-cover h1 { font-size: 1.8rem; }
+      .bab .bab-title { font-size: 1.3rem; }
+      .bab .bab-number { font-size: 1.4rem; }
+      .book-footer { flex-direction: column; align-items: stretch; }
+      .book-footer .btn { justify-content: center; }
+      .table-wrap table { font-size: 0.7rem; min-width: 350px; }
+      .toc-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .btn-more span { display: none; }
+      .btn-more { padding: 6px 12px; }
+      #backToTop { width: 42px; height: 42px; font-size: 0.95rem; bottom: 16px; right: 16px; }
+    }
+
+    @media (max-width: 576px) {
+      .book { padding: 16px 12px 24px; }
+      .book-cover h1 { font-size: 1.4rem; }
+      .bab .bab-title { font-size: 1.1rem; }
+      .bab p { font-size: 0.84rem; }
+      .page-header-custom h1 { font-size: 1.8rem; }
+      .page-header-custom p { font-size: 0.9rem; }
+      .navbar-brand .brand-text { font-size: 0.9rem; }
+      .navbar-brand .brand-text span { font-size: 0.55rem; }
+      .table-wrap table { font-size: 0.6rem; min-width: 280px; }
+    }
+
+    @media print {
+      body { background: #fff; padding: 20px; }
+      .body-overlay { background: #fff; backdrop-filter: none; }
+      .book { box-shadow: none; padding: 0; background: #fff; border: none; }
+      .book p, .book .bab p, .book .bab ul li, .book .bab ol li { color: #222; }
+      .book .bab-title, .book .bab-number, .book .book-cover h1 { color: #222; }
+      .book .bab .bab-sub, .book .bab .bab-sub-sm { color: #222; }
+      .book .toc .toc-item { color: #222; }
+      .book .toc .toc-item a { color: #222; }
+      .book .toc .toc-item .page { color: #B8893A; }
+      .book .highlight-box { background: #f5f0e8; border-color: #B8893A; }
+      .book .highlight-box p, .book .highlight-box ul li { color: #222; }
+      .book .table-wrap { background: #f5f0e8; border-color: #ddd; }
+      .book .table-wrap th { background: #e8ddd0; color: #222; border-color: #ddd; }
+      .book .table-wrap td { color: #222; border-color: #ddd; }
+      .book .quote { background: #f5f0e8; color: #222; }
+      .book .quote .author { color: #222; }
+      .book .book-footer .btn { border-color: #ddd; color: #222; background: #f5f0e8; }
+      .back-top, .progress, .navbar, .footer { display: none !important; }
+      .book-footer { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-logo">
+      <i class="fas fa-archway"></i>
+      Budaya Nusantara
+    </div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <p style="color:var(--slate-soft);margin-top:12px;font-size:0.85rem;">
+      Memuat buku PPKD Banten 2025...
+    </p>
+  </div>
+
+  <!-- ========== OVERLAY ========== -->
+  <div class="body-overlay">
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-inner">
+
+        <a class="navbar-brand" href="index.html">
+          <div class="brand-icon"><i class="fas fa-archway"></i></div>
+          <div class="brand-text">
+            Budaya Nusantara
+            <span>Provinsi Banten · 2026</span>
+          </div>
+        </a>
+
+        <ul class="navbar-links">
+          <li><a href="index.html#profil"><i class="fas fa-map-marked-alt"></i> Profil</a></li>
+          <li><a href="index.html#opk"><i class="fas fa-th-large"></i> Indikator OPK</a></li>
+          <li class="has-drop">
+            <a href="index.html#sarana"><i class="fas fa-layer-group"></i> Sarana & Prasarana</a>
+            <ul class="navbar-dropdown">
+              <li><a href="tradisi_lisan.html"><i class="fas fa-microphone-alt"></i> Tradisi Lisan</a></li>
+              <li><a href="manuskrip.html"><i class="fas fa-scroll"></i> Manuskrip</a></li>
+              <li><a href="adat_istiadat.html"><i class="fas fa-hand-holding-heart"></i> Adat Istiadat</a></li>
+              <li><a href="ritus.html"><i class="fas fa-fire"></i> Ritus</a></li>
+              <li><a href="pengetahuan_tradisional.html"><i class="fas fa-tree"></i> Pengetahuan Tradisional</a></li>
+              <li><a href="teknologi_tradisional.html"><i class="fas fa-cogs"></i> Teknologi Tradisional</a></li>
+              <li><a href="seni.html"><i class="fas fa-palette"></i> Seni</a></li>
+              <li><a href="bahasa.html"><i class="fas fa-language"></i> Bahasa</a></li>
+              <li><a href="permainan_rakyat.html"><i class="fas fa-dice"></i> Permainan Rakyat</a></li>
+              <li><a href="olahraga_tradisional.html"><i class="fas fa-running"></i> Olahraga Tradisional</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#sumber"><i class="fas fa-book-open"></i> Sumber Data</a></li>
+          <!-- ===== MENU BUKU ===== -->
+          <li><a href="buku.html" class="buku-link"><i class="fas fa-book"></i> Buku</a></li>
+        </ul>
+
+        <div class="navbar-actions">
+          <div class="dropdown-more">
+            <button class="btn-more" id="btnMore">
+              <i class="fas fa-ellipsis-v"></i> <span>Lainnya</span>
+            </button>
+            <div class="dropdown-more-content" id="dropdownMore">
+              <a href="#statistik"><i class="fas fa-chart-pie"></i> Statistik</a>
+              <a href="galeri.html"><i class="fas fa-images"></i> Galeri</a>
+              <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+              <li><a href="tugas_bidang_kebudayaan.html"><i class="fas fa-tasks"></i> Tugas Kebudayaan</a></li>
+            </div>
+          </div>
+
+          <input type="file" id="bgInput" accept="image/*" style="display:none;">
+
+          <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- ========== DRAWER ========== -->
+    <nav class="navbar-drawer" id="navDrawer">
+      <ul>
+        <li class="drawer-label">Navigasi</li>
+        <li><a href="index.html#profil" class="drawer-link"><i class="fas fa-map-marked-alt"></i> Profil Banten</a></li>
+        <li><a href="index.html#opk" class="drawer-link"><i class="fas fa-th-large"></i> Indikator OPK</a></li>
+        <li><a href="index.html#sarana" class="drawer-link"><i class="fas fa-layer-group"></i> Sarana & Prasarana</a></li>
+        <li><a href="tugas_bidang_kebudayaan.html" class="drawer-link"><i class="fas fa-tasks"></i> Tugas Kebudayaan</a></li>
+        <li><a href="index.html#sumber" class="drawer-link"><i class="fas fa-book-open"></i> Sumber Data</a></li>
+        <li><a href="buku.html" class="drawer-link" style="background:rgba(184,137,58,0.15);border-radius:10px;"><i class="fas fa-book"></i> Buku</a></li>
+
+        <li class="drawer-label">Kategori OPK</li>
+        <li><a href="tradisi_lisan.html"><i class="fas fa-microphone-alt"></i> Tradisi Lisan</a></li>
+        <li><a href="manuskrip.html"><i class="fas fa-scroll"></i> Manuskrip</a></li>
+        <li><a href="adat_istiadat.html"><i class="fas fa-hand-holding-heart"></i> Adat Istiadat</a></li>
+        <li><a href="ritus.html"><i class="fas fa-fire"></i> Ritus</a></li>
+        <li><a href="pengetahuan_tradisional.html"><i class="fas fa-tree"></i> Pengetahuan Tradisional</a></li>
+        <li><a href="teknologi_tradisional.html"><i class="fas fa-cogs"></i> Teknologi Tradisional</a></li>
+        <li><a href="seni.html"><i class="fas fa-palette"></i> Seni</a></li>
+        <li><a href="bahasa.html"><i class="fas fa-language"></i> Bahasa</a></li>
+        <li><a href="permainan_rakyat.html"><i class="fas fa-dice"></i> Permainan Rakyat</a></li>
+        <li><a href="olahraga_tradisional.html"><i class="fas fa-running"></i> Olahraga Tradisional</a></li>
+
+        <li class="drawer-label">Lainnya</li>
+        <li><a href="galeri.html" class="drawer-link"><i class="fas fa-images"></i> Galeri</a></li>
+        <li><a href="kontak.html" class="drawer-link"><i class="fas fa-envelope"></i> Kontak</a></li>
+      </ul>
+    </nav>
+
+    <!-- ========== PAGE HEADER ========== -->
+    <div class="page-header-custom">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+          <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i>
+          <a href="buku.html">Buku</a>
+          <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i>
+          <span style="color:rgba(255,255,255,0.6);">PPKD Banten 2025</span>
+        </div>
+        <h1>Pokok Pikiran <span class="highlight">Kebudayaan Daerah</span> Banten 2025</h1>
+        <p>PPKD Provinsi Banten — Landasan Pemajuan Kebudayaan Berbasis Data dan Partisipasi.</p>
+      </div>
+    </div>
+
+    <!-- ========== BOOK CONTENT ========== -->
+    <div class="book-wrapper">
+      <div class="container-book">
+        <div class="book">
+
+          <!-- ============================================================
+               COVER
+               ============================================================ -->
+          <div class="book-cover">
+            <div class="cover-label">Dokumen Perencanaan Strategis</div>
+            <h1>Pokok Pikiran <span class="highlight">Kebudayaan Daerah</span> Banten 2025</h1>
+            <div class="subtitle">PPKD Provinsi Banten — Landasan Pemajuan Kebudayaan Berbasis Data dan Partisipasi</div>
+            <div class="cover-year">2025</div>
+            <div class="cover-decoration">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               DAFTAR ISI
+               ============================================================ -->
+          <div class="toc">
+            <h2><i class="fas fa-list-ul"></i> Daftar Isi</h2>
+            <div class="toc-grid">
+              <div class="toc-item"><a href="#bab1">BAB 1 — Rangkuman Umum</a><span class="page">9</span></div>
+              <div class="toc-item"><a href="#bab2">BAB 2 — Profil Provinsi Banten</a><span class="page">11</span></div>
+              <div class="toc-item"><a href="#bab3">BAB 3 — Lembaga Pendidikan</a><span class="page">42</span></div>
+              <div class="toc-item"><a href="#bab4">BAB 4 — Data Objek Pemajuan Kebudayaan</a><span class="page">55</span></div>
+              <div class="toc-item"><a href="#bab5">BAB 5 — SDM &amp; Lembaga Kebudayaan</a><span class="page">177</span></div>
+              <div class="toc-item"><a href="#bab6">BAB 6 — Data Sarana &amp; Prasarana</a><span class="page">186</span></div>
+              <div class="toc-item"><a href="#bab7">BAB 7 — Permasalahan &amp; Rekomendasi</a><span class="page">192</span></div>
+              <div class="toc-item"><a href="#bab8">BAB 8 — Lampiran</a><span class="page">216</span></div>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               BAB 1
+               ============================================================ -->
+          <div class="bab" id="bab1">
+            <div class="bab-header">
+              <span class="bab-number">BAB 1</span>
+              <span class="bab-title">Rangkuman Umum</span>
+            </div>
+
+            <p>
+              Penyusunan Pokok Pikiran Kebudayaan Daerah (PPKD) Provinsi Banten berangkat dari pemahaman antropologis bahwa kebudayaan merupakan keseluruhan gagasan, tindakan, dan hasil karya manusia yang dipelajari serta ditransmisikan antargenerasi. Kerangka teoretik klasik—antara lain penekanan determinasi kultural dan sifat pewarisan nilai—dipakai sebagai lensa analitis untuk menstrukturkan data sekaligus menarik implikasi kebijakan pada tingkat daerah. Kerangka ini disejajarkan dengan definisi dalam <strong>Undang-Undang Nomor 5 Tahun 2017 tentang Pemajuan Kebudayaan</strong> yang menempatkan cipta, rasa, karsa, dan karya sebagai inti konsep; memaknai Kebudayaan Nasional sebagai proses dan hasil interaksi antar kebudayaan di Indonesia; serta menetapkan <span class="gold">empat poros kebijakan</span> berupa Pelindungan, Pengembangan, Pemanfaatan, dan Pembinaan sebagai orientasi utama perencanaan.
+            </p>
+
+            <p>
+              Landasan hukum daerah yang digunakan adalah perangkat regulasi yang masih berlaku dan mengikat, meliputi <strong>Pergub Banten Nomor 15 Tahun 2014</strong> tentang Muatan Lokal Seni Budaya untuk pendidikan menengah, <strong>Pergub Banten Nomor 12 Tahun 2018</strong> tentang Muatan Lokal Seni Pencak Silat untuk pendidikan khusus, <strong>Perda Banten Nomor 2 Tahun 2022</strong> tentang Susunan Kelembagaan, Pengisian, dan Masa Jabatan Kepala Desa Adat, <strong>Perda Banten Nomor 2 Tahun 2024</strong> tentang Pemajuan Kebudayaan Provinsi Banten sebagai payung kebijakan, serta <strong>Kepgub Banten Nomor 45 Tahun 2025</strong> yang menetapkan Tim Ahli Cagar Budaya (TACB) Provinsi Banten periode 2025–2030.
+            </p>
+
+            <div class="highlight-box">
+              <h4><i class="fas fa-gavel"></i> Landasan Regulasi</h4>
+              <ul>
+                <li><strong>UU No. 5 Tahun 2017</strong> — Pemajuan Kebudayaan</li>
+                <li><strong>Perda Banten No. 2 Tahun 2024</strong> — Payung Kebijakan Pemajuan Kebudayaan Banten</li>
+                <li><strong>Kepgub Banten No. 45 Tahun 2025</strong> — Tim Ahli Cagar Budaya 2025–2030</li>
+                <li><strong>Pergub Banten No. 15/2014 &amp; 12/2018</strong> — Muatan Lokal Seni Budaya</li>
+                <li><strong>Perda Banten No. 2 Tahun 2022</strong> — Kepala Desa Adat</li>
+              </ul>
+            </div>
+
+            <p>
+              PPKD dirancang untuk menghasilkan dokumen berbasis bukti yang memetakan aset, aktor, dan risiko kebudayaan Banten, sekaligus menetapkan prioritas intervensi yang koheren dengan empat poros kebijakan nasional. Ruang lingkupnya mencakup <span class="gold">sepuluh Objek Pemajuan Kebudayaan (OPK)</span>—tradisi lisan, manuskrip, adat istiadat, ritus, pengetahuan tradisional, teknologi tradisional, seni, bahasa, permainan rakyat, dan olahraga tradisional—serta keterkaitan strategis dengan Cagar Budaya yang memiliki rezim pelindungan tersendiri.
+            </p>
+
+            <div class="quote">
+              <i class="fas fa-quote-left" style="color:var(--gold);margin-right:6px;opacity:0.6;"></i>
+              Kebudayaan merupakan keseluruhan gagasan, tindakan, dan hasil karya manusia yang dipelajari serta ditransmisikan antargenerasi.
+              <div class="author">— Kerangka Teoretik PPKD Banten</div>
+            </div>
+
+            <p>
+              Tata kelola penyusunan menekankan prinsip akuntabilitas dan partisipasi. Tim penyusun berjumlah gasal dengan komposisi minimal lima orang yang merepresentasikan perangkat daerah bidang kebudayaan, perencanaan, dan keuangan, serta melibatkan ahli yang memiliki kompetensi pada OPK dan/atau Cagar Budaya. Proses konsultatif dilakukan secara berjenjang melalui validasi administratif–substantif, focus group discussion dengan pemangku kepentingan (perangkat daerah, komunitas, TACB, pendidik, pelaku seni, mitra relevan), dan diskusi publik untuk memperoleh umpan balik final sebelum penetapan keluaran sementara.
+            </p>
+
+            <p>
+              Metodologi pendataan bertumpu pada borang atau isian standar per OPK dan Cagar Budaya yang dilengkapi bukti pendukung seperti legalitas komunitas, dokumentasi praktik, koordinat lokasi, serta rekam kegiatan. Data dikompilasi, dibersihkan, dan diuji kelengkapan dan konsistensinya; kemudian divalidasi substansinya melalui triangulasi dokumen, pengamatan terbatas, dan wawancara singkat sesuai kebutuhan. Pada tahapan pelaporan saat ini, borang lengkap telah diterima dari <strong>empat dari delapan kabupaten/kota di Banten</strong>; oleh sebab itu kompilasi yang tersaji dinyatakan sebagai baseline sementara yang representativitas spasialnya akan ditingkatkan melalui pengumpulan susulan, klinik pengisian borang, pendampingan teknis, dan siklus pemutakhiran terjadwal.
+            </p>
+
+            <p>
+              Analisis substansi dilakukan dengan mengkaji inventaris OPK dan Cagar Budaya, kondisi keterpeliharaan serta tingkat keterancaman, ekosistem pelaku dan jaringan dukungan, pranata sosial dan nilai yang menopang praktik, ketersediaan sarana–prasarana, serta nilai strategisnya bagi pendidikan, ekonomi kreatif, dan pariwisata berbasis komunitas. Indikator kuantitatif—misalnya jumlah varian objek, frekuensi pertunjukan atau ritus, tingkat partisipasi pelaku—dipadukan dengan indikator kualitatif seperti vitalitas transmisi, mutu kuratorial, dan signifikansi budaya.
+            </p>
+
+            <p>
+              Hasil analisis diberi bobot melalui penilaian gabungan atas signifikansi budaya, kondisi dan risiko, serta manfaat publik untuk menetapkan prioritas jangka pendek, menengah, dan panjang yang kemudian diikat dalam rencana aksi pada <span class="gold">empat poros kebijakan</span>: pelindungan melalui inventarisasi, dokumentasi, dan perlindungan hukum; pengembangan melalui riset, inovasi bentuk, serta integrasi muatan lokal dalam pendidikan; pemanfaatan dengan koridor etika yang jelas agar menciptakan nilai tambah tanpa mengorbankan integritas budaya; dan pembinaan melalui kaderisasi maestro, beasiswa, pelatihan kuratorial–produksi, serta penguatan kelembagaan komunitas.
+            </p>
+
+            <p>
+              Keluaran yang dituju meliputi profil naratif dan peta tematik OPK dan Cagar Budaya per kabupaten/kota beserta metadata, matriks prioritas dan rencana aksi yang memuat program, penanggung jawab, horizon waktu, serta estimasi kebutuhan sumber daya, juga kerangka kinerja yang menegaskan baseline, target, sumber data, dan frekuensi pelaporan. Seluruh keluaran diintegrasikan ke dalam siklus perencanaan dan penganggaran daerah agar selaras dengan Renstra OPD dan RKPD, sekaligus membuka peluang kemitraan pendidikan, komunitas, dan dunia usaha sesuai ketentuan pendanaan yang sah. Untuk menjaga mutu dan keberlanjutan, disusun agenda pemutakhiran tahunan dan mekanisme pemantauan–evaluasi, dilengkapi standar operasional pemrosesan data, penomoran versi dataset, serta pengamanan data sensitif.
+            </p>
+
+            <p>
+              Manajemen risiko diterapkan pada empat ranah utama. Risiko data—ketidaklengkapan, inkonsistensi, atau keterlambatan—diatasi melalui klinik pengisian borang, pendampingan teknis, dan audit data berkala. Risiko program—keterbatasan kapasitas pelaksana—ditangani dengan penguatan SDM, pemanfaatan keahlian TACB, dan kolaborasi dengan perguruan tinggi serta komunitas. Risiko etik—komodifikasi berlebihan atau pemanfaatan yang tidak memperoleh persetujuan komunitas—dimitigasi dengan pedoman etika yang menegaskan persetujuan, atribusi, dan skema berbagi manfaat yang adil. Risiko lingkungan—dampak kegiatan terhadap situs atau praktik—dikelola melalui prosedur konservasi, uji kelayakan dampak, dan langkah mitigasi yang proporsional.
+            </p>
+
+            <p>
+              Strategi diseminasi memastikan akses publik dan akuntabilitas melalui ringkasan eksekutif bagi pengambil kebijakan, naskah singkat tematik untuk edukasi dan advokasi, serta opsi dasbor informasi publik yang menghormati perlindungan data komunitas. Dengan landasan hukum yang aktif berlaku, metodologi berbasis bukti, dan proses validasi partisipatif, PPKD Provinsi Banten diharapkan menjadi instrumen yang terukur dan adaptif untuk memperkuat ketahanan budaya, meningkatkan manfaat publik, dan memastikan kesinambungan transmisi kebudayaan; seluruh temuan dalam fase awal ini tetap bersifat berkembang seiring penyempurnaan data dari delapan kabupaten/kota dan putaran verifikasi berikutnya.
+            </p>
+          </div>
+
+          <!-- ============================================================
+               BAB 2
+               ============================================================ -->
+          <div class="bab" id="bab2">
+            <div class="bab-header">
+              <span class="bab-number">BAB 2</span>
+              <span class="bab-title">Profil Provinsi Banten</span>
+            </div>
+
+            <div class="bab-sub">2.1 Tentang Provinsi Banten</div>
+            <p>
+              Provinsi Banten terletak di ujung barat Pulau Jawa. Secara astronomis, wilayah ini berada di antara 105°01'11" hingga 106°07'12" Bujur Timur dan 05°07'50" hingga 07°01'01" Lintang Selatan. Di sebelah barat, Provinsi Banten berbatasan dengan Selat Sunda; di utara, berbatasan dengan Laut Jawa; di selatan berbatasan dengan Samudera Hindia; dan di sebelah timur, berbatasan langsung dengan Provinsi DKI Jakarta serta Provinsi Jawa Barat. Banten merupakan provinsi ke-6 di Pulau Jawa dengan ibukota provinsi di Kota Serang. Banten resmi menjadi daerah otonom pada tahun 2000 setelah Dewan Perwakilan Rakyat Republik Indonesia (DPR RI) mengesahkan Undang-Undang Nomor 23 Tahun 2000 tentang Pembentukan Provinsi Banten.
+            </p>
+
+            <div class="bab-sub-sm">2.1.1 Wilayah dan Karakteristik</div>
+            <p>
+              Secara administratif, Provinsi Banten memiliki luas wilayah 9.352,77 km² dan terdiri atas 8 wilayah pemerintahan yang meliputi 4 kabupaten dan 4 kota. Pemekaran wilayah administrasi kabupaten/kota di Provinsi Banten mencapai bentuknya yang sekarang pada akhir tahun 2015. Berdasarkan Peraturan Menteri Dalam Negeri Nomor 56 Tahun 2015 tentang Kode dan Data Wilayah Administrasi Pemerintahan, luas wilayah daratan masing-masing kabupaten/kota di Provinsi Banten adalah sebagai berikut:
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Kabupaten/Kota</th><th>Luas (km²)</th></tr></thead>
+                <tbody>
+                  <tr><td>Kabupaten Pandeglang</td><td>2.746,89</td></tr>
+                  <tr><td>Kabupaten Lebak</td><td>3.426,56</td></tr>
+                  <tr><td>Kabupaten Serang</td><td>1.734,28</td></tr>
+                  <tr><td>Kabupaten Tangerang</td><td>1.011,86</td></tr>
+                  <tr><td>Kota Serang</td><td>266,71</td></tr>
+                  <tr><td>Kota Cilegon</td><td>175,50</td></tr>
+                  <tr><td>Kota Tangerang</td><td>153,93</td></tr>
+                  <tr><td>Kota Tangerang Selatan</td><td>147,19</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: Permendagri No. 56 Tahun 2015</div>
+            </div>
+
+            <p>
+              Topografi Provinsi Banten cukup beragam, terdiri dari dataran, perbukitan landai, hingga wilayah curam. Secara umum, kemiringan lahan terbagi dalam tiga kategori, yaitu datar hingga landai (0–15%) yang banyak ditemukan di wilayah utara seperti Kabupaten Tangerang bagian utara, Serang, dan sepanjang pesisir utara; perbukitan bergelombang sedang (15–25%) di wilayah tengah; serta perbukitan curam (di atas 25%) yang mendominasi bagian selatan seperti Kabupaten Lebak dan sebagian Pandeglang (Dinas Lingkungan Hidup Provinsi Banten, 2020:7). Wilayah selatan Banten juga merupakan kawasan pegunungan dengan ketinggian rata-rata sekitar 400 meter di atas permukaan laut. Beberapa gunung yang tersebar di wilayah ini antara lain Gunung Payung (480 mdpl), Gunung Honje (620 mdpl), Gunung Tilu (562 mdpl), dan Gunung Raksa (320 mdpl) di Ujung Kulon; Gunung Pulosari (1.347 mdpl), Gunung Aseupan (1.174 mdpl), serta Gunung Karang (1.447 mdpl) di Kabupaten Pandeglang. Di Kabupaten Lebak terdapat Gunung Halimun (1.929 mdpl), Gunung Kendeng (1.918 mdpl), dan Gunung Endut (1.207 mdpl). Sebagian besar wilayah pegunungan ini merupakan hutan hujan tropis dengan tanah yang subur.
+            </p>
+
+            <p>
+              Wilayah Provinsi Banten memiliki struktur geologi yang kompleks dengan beragam formasi batuan. Beberapa formasi penting antara lain Cicarucub, Cijengkol, Citarate, Cimapag, Sareweh, Baduy, Cimanceuri, dan Cikotok. Tiga formasi dengan kondisi ekstrim yaitu Bojongmanik, Cipacar, dan Bayah. Ketebalan tiap lapisan batuan bervariasi antara 200–800 meter, dengan total lebih dari 3.500 meter. Formasi Bojongmanik, yang tertua, terbentuk sejak Miosen akhir dan terdiri atas batu pasir, lempung, batu gamping, tuf, konglomerat, dan breksi andesit. Formasi Cipacar didominasi oleh tuf batu apung, lempung tufaan, dan napal glaukonitan. Formasi Bayah yang menyusun bagian selatan Banten berumur Eosen, terdiri atas konglomerat, batu lempung, dan batu gamping (Dinas Lingkungan Hidup Provinsi Banten, 2020:10).
+            </p>
+
+            <p>
+              Ditinjau dari jenis tanahnya, ahli pertanian Dr. Mohr berpendapat bahwa jenis tanah di bagian selatan Banten tergolong unik karena memiliki jenis tanah yang disebut <em>bantam tuf</em> dengan karakter warna tanah keputih-putihan seperti kapur, tetapi bukan kapur. Keistimewaan dari jenis tanah ini, jika pada musim kemarau permukaan tanah menjadi keras seperti batu, sedangkan saat musim hujan kondisi tanah mencair laksana bubur (Suharto, 2001:40). Jenis tanah seperti ini, menurut ahli pertanian lainnya, Dr. Ir. Thorenaar, sangat cocok untuk tanaman karet (Kementrian Penerangan, 1953, dalam Suharto, 2001:40).
+            </p>
+
+            <p>
+              Batuan di wilayah selatan Banten meliputi batuan sedimen, vulkanik, dan intrusi yang terbentuk sejak Miosen awal hingga Resen. Juga ditemukan batuan metamorf seperti sekis dan genes di utara Cihara. Endapan termuda berupa aluvium dan sedimen pantai, yang mengandung pasir, kerikil, pecahan karang, dan moluska. Dari segi jenis tanah, Banten terbagi menjadi dua kelompok utama, yaitu tanah residu (hasil pelapukan batuan) dan tanah hasil angkutan (material pindahan). Jenis tanah yang umum dijumpai meliputi aluvial, latosol, podsolik merah kuning, regosol, andosol, brown forest, dan gelisol. Sebaran tanah ini mencakup hampir seluruh kabupaten dan kota di Provinsi Banten (Dinas Lingkungan Hidup Provinsi Banten, 2020:10).
+            </p>
+
+            <p>
+              Secara morfologis, permukaan wilayah Banten dibagi menjadi tiga kelompok berdasarkan ketinggian. Dataran tinggi umumnya berada di Kabupaten Pandeglang dengan ketinggian di atas 250 mdpl, sedangkan dataran paling rendah berada di Kota Tangerang dengan ketinggian sekitar 19,42 mdpl. Perbedaan ketinggian ini turut memengaruhi kepadatan dan aktivitas penduduk, di mana wilayah dataran rendah, terutama yang berdekatan dengan Jakarta, cenderung memiliki aktivitas ekonomi yang lebih tinggi dan tingkat kepadatan penduduk yang lebih besar. Wilayah utara merupakan dataran rendah, yang tanahnya digarap menjadi sawah beririgasi. Irigasi ini sudah dibangun sejak zaman kesultanan dan memanfaatkan aliran sungai-sungai besar yang melintang dari selatan ke utara yang bermuara ke Laut Jawa. Sungai-sungai besar yang melintasi wilayah ini yaitu Sungai Ciujung dengan hulu berada di Pegunungan Kendeng dan melintas di Kabupaten Lebak dan Kabupaten Serang.
+            </p>
+
+            <p>
+              Di antara kedua kabupaten ini, tepatnya di Kampung Pamarayan, Desa Pamarayan, Kabupaten Serang, pemerintah kolonial Hindia Belanda yang mulai memperhatikan persoalan irigasi di Banten, terutama setelah sering terjadi banjir di sepanjang jalan raya Serang-Batavia dan keluhan tentang buruknya saluran air di wilayah Cikande Udik serta lahan pertanian partikelir di sekitarnya, membangun sebuah bendungan besar yang kini tidak berfungsi dan telah dianggap sebagai objek warisan budaya lokal di Banten dengan nomor inventaris 022.01.01.04.07. Dalam sejarahnya, pada tahun 1892, Residen Banten mendorong diadakannya penyelidikan teknis yang kemudian menjadi bagian dari kebijakan pembangunan yang lebih luas. Kebijakan Etis yang diluncurkan pada tahun 1901 dan Undang-Undang Desentralisasi tahun 1903 membawa semangat baru dalam pembangunan infrastruktur, termasuk irigasi, sebagai bagian dari tanggung jawab pemerintah kolonial terhadap kesejahteraan masyarakat. Rencana pembangunan Bendungan Lama Pamarayan disusun oleh insinyur BOW, S.W. Becking, bersama Van Marleen. Mereka mengajukan rancangan pertama kepada pemerintah kolonial pada Mei 1904, setelah sebelumnya menerima persetujuan untuk menyusun laporan awal pada tahun 1899. Bendungan Lama Pamarayan akhirnya mulai dibangun pada tahun 1904 dengan anggaran sebesar f. 2.000.000,- dan mulai dioperasikan pada tahun 1919 (Syahid, M.A.S., Wigati R, 2023:21-23).
+            </p>
+
+            <p>
+              Penggunaan lahan di Provinsi Banten terbagi menjadi tiga kategori utama, yaitu lahan sawah, lahan bukan sawah, dan lahan non-pertanian. Lahan sawah mencakup berbagai jenis irigasi seperti irigasi teknis, setengah teknis, sederhana, irigasi desa non-PU, sawah tadah hujan, non-PU, sawah tadah hujan, sawah lebak, dan lahan sawah yang tidak diusahakan.
+            </p>
+
+            <p>
+              Lahan bukan sawah meliputi tegalan atau kebun, ladang/huma, perkebunan, hutan rakyat atau tanaman keras, padang penggembalaan, dan jenis lainnya. Sementara itu, lahan non-pertanian mencakup lahan perumahan dan bangunan, rawa-rawa, jalan, lapangan olahraga, serta lahan non-pertanian lainnya.
+            </p>
+
+            <p>
+              Berdasarkan data Survei Pertanian Antar Sensus (SP-Lahan) tahun 2020, luas lahan sawah di Provinsi Banten mencapai 198,52 ribu hektar. Sebagian besar lahan sawah berada di Kabupaten Pandeglang (52,64 ribu ha / 25,52%), Kabupaten Lebak (51,30 ribu ha / 25,84%), Kabupaten Serang (48,12 ribu ha / 24,24%). Sementara itu, lahan sawah terkecil berada di Kota Tangerang Selatan (10 ha) dan Kota Tangerang (351 ha). Sekitar 99,27% dari total lahan sawah ditanami padi. Sebanyak 65,67% ditanami dua kali setahun, 20,88% tiga kali, dan 12,73% sekali dalam setahun. Lahan sawah irigasi mencakup 97,59 ribu hektar (49,16%). Irigasi terbesar terdapat di Kabupaten Serang (24,19 ribu ha), Kabupaten Lebak (23,99 ribu ha), Kabupaten Tangerang (23,74 ribu ha), Kabupaten Pandeglang (20,49 ribu ha). Hampir seluruh sawah irigasi ditanami padi (99,45%). Sekitar 71,25% dari sawah irigasi ditanami dua kali, 22,95% tiga kali, dan 5,25% sekali dalam setahun. Sawah non-irigasi mencakup 100,93 ribu hektar (50,84%), mayoritas berupa sawah tadah hujan (100,82 ribu ha). Distribusi terbesar berada di Kabupaten Pandeglang (32,15 ribu ha), Kabupaten Lebak (27,30 ribu ha), dan Kabupaten Serang (23,93 ribu ha). Sekitar 99,15% sawah tadah hujan ditanami padi, sedangkan sisanya ditanami tanaman lain atau dibiarkan kosong (BPS, 2020:9-11).
+            </p>
+
+            <p>
+              Luas lahan pertanian non-sawah (kebun, ladang, padang rumput, dll) di Banten mencapai 526,53 ribu hektar (21,50% dari total luas lahan). Sekitar 82,67% berada di Kabupaten Lebak (228,25 ribu ha / 43,35%), Kabupaten Pandeglang (207,04 ribu ha / 39,32%). Lahan non-sawah terkecil berada di Kota Tangerang (496 ha / 0,09%) (BPS, 2020:12).
+            </p>
+
+            <div class="bab-sub-sm">2.1.2 Demografi</div>
+            <p>
+              Provinsi Banten merupakan salah satu wilayah yang mengalami perkembangan penduduk yang cukup dinamis dalam beberapa dekade terakhir. Sebagai daerah yang berbatasan langsung dengan DKI Jakarta, Banten menjadi wilayah strategis yang menarik bagi mobilitas penduduk, baik karena faktor ekonomi maupun urbanisasi. Pertumbuhan penduduk di provinsi ini pun turut mencerminkan pola demografi khas kawasan penyangga kota metropolitan, di mana pertumbuhan penduduk, kepadatan, dan komposisi gender menjadi indikator penting dalam perencanaan pembangunan wilayah. Berdasarkan proyeksi penduduk tahun 2020–2050 yang bersumber dari Sensus Penduduk 2020, jumlah penduduk di Provinsi Banten diperkirakan mencapai 12,54 juta jiwa pada tahun 2025. Jumlah tersebut mencakup sekitar 6,37 juta penduduk laki-laki dan 6,17 juta penduduk perempuan.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Kabupaten</th><th>2020 (ribu)</th><th>2024 (ribu)</th><th>2025 (ribu)</th></tr></thead>
+                <tbody>
+                  <tr><td>Serang</td><td>1.622,63</td><td>1.701,80</td><td>1.720,32</td></tr>
+                  <tr><td>Pandeglang</td><td>1.272,69</td><td>1.325,95</td><td>1.338,37</td></tr>
+                  <tr><td>Lebak</td><td>1.386,79</td><td>1.449,21</td><td>1.463,82</td></tr>
+                  <tr><td>Tangerang</td><td>3.245,62</td><td>3.400,49</td><td>3.435,16</td></tr>
+                </tbody>
+                <thead><tr><th>Kota</th><th>2020</th><th>2024</th><th>2025</th></tr></thead>
+                <tbody>
+                  <tr><td>Serang</td><td>692,10</td><td>734,87</td><td>745,56</td></tr>
+                  <tr><td>Cilegon</td><td>434,90</td><td>455,62</td><td>460,40</td></tr>
+                  <tr><td>Tangerang</td><td>1.895,49</td><td>1.963,97</td><td>1.971,65</td></tr>
+                  <tr><td>Tangerang Selatan</td><td>1.354,35</td><td>1.399,50</td><td>1.402,16</td></tr>
+                  <tr><td><strong>Banten</strong></td><td><strong>11.904,56</strong></td><td><strong>12.431,39</strong></td><td><strong>12.537,44</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: BPS Provinsi Banten, 2025</div>
+            </div>
+
+            <p>
+              Data jumlah penduduk Provinsi Banten menunjukkan tren peningkatan yang konsisten selama periode 2020 hingga 2025. Total penduduk Provinsi Banten bertambah dari 11.904,56 ribu jiwa pada tahun 2020 menjadi 12.537,44 ribu jiwa pada tahun 2025. Ini mencerminkan adanya pertumbuhan penduduk sebesar sekitar 5,32% dalam kurun waktu lima tahun, atau rata-rata 1,06% per tahun. Berdasarkan tabel Pertumbuhan Berdasarkan Kabupaten dan Kota di atas, di tingkat kabupaten, Kabupaten Tangerang memiliki jumlah penduduk tertinggi di antara seluruh wilayah administratif di Banten, dengan populasi mencapai 3.435,16 ribu jiwa pada tahun 2025. Angka ini menunjukkan pertambahan sekitar 5,83% dari tahun 2020. Kabupaten Serang menyusul di posisi kedua dengan 1.720,32 ribu jiwa pada tahun 2025, meningkat sekitar 6,03% dibandingkan tahun 2020. Sementara itu, Kabupaten Pandeglang dan Kabupaten Lebak mengalami pertumbuhan yang lebih moderat, masing-masing sebesar 5,16% dan 5,55% dalam lima tahun.
+            </p>
+
+            <p>
+              Untuk wilayah kota, Kota Tangerang memiliki jumlah penduduk tertinggi, yakni 1.971,65 ribu jiwa pada tahun 2025, mengalami kenaikan sebesar 4,02% sejak tahun 2020. Kota Serang menunjukkan pertumbuhan yang cukup signifikan, yakni 7,73% dalam periode yang sama. Kota Tangerang Selatan mengalami pertumbuhan yang relatif rendah, yakni hanya sekitar 3,53% dalam lima tahun terakhir. Kota Cilegon juga mencatat pertumbuhan yang serupa, dengan kenaikan sebesar 5,85% dari tahun 2020 ke 2025. Dari data tersebut, terlihat bahwa wilayah dengan konsentrasi industri dan urbanisasi tinggi seperti Kabupaten Tangerang, Kota Tangerang, dan Kota Serang tetap menjadi magnet pertumbuhan penduduk. Faktor urbanisasi, ketersediaan lapangan kerja, dan akses layanan publik dapat menjadi pendorong utama peningkatan jumlah penduduk di wilayah ini. Sementara itu, daerah dengan karakteristik lebih rural seperti Pandeglang dan Lebak mengalami pertumbuhan yang lebih lambat, meskipun tetap stabil.
+            </p>
+
+            <p>
+              Data Badan Pusat Statistik (2025) mengenai jumlah penduduk menurut kelompok umur dan jenis kelamin (ribu jiwa) di Provinsi Banten pada tahun 2025 dapat dilihat pada tabel berikut:
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Umur</th><th>2024</th><th>2025</th><th>2024</th><th>2025</th><th>2024</th><th>2025</th></tr></thead>
+                <thead><tr><th></th><th colspan="2">Laki-laki</th><th colspan="2">Perempuan</th><th colspan="2">Total</th></tr></thead>
+                <tbody>
+                  <tr><td>0-4</td><td>503,55</td><td>494,50</td><td>482,66</td><td>474,73</td><td>986,21</td><td>969,23</td></tr>
+                  <tr><td>5-9</td><td>532,33</td><td>529,71</td><td>508,10</td><td>505,34</td><td>1.040,43</td><td>1.035,05</td></tr>
+                  <tr><td>10-14</td><td>529,24</td><td>531,25</td><td>503,98</td><td>507,42</td><td>1.033,22</td><td>1.038,67</td></tr>
+                  <tr><td>15-19</td><td>512,04</td><td>512,40</td><td>480,97</td><td>482,08</td><td>993,01</td><td>994,48</td></tr>
+                  <tr><td>20-24</td><td>517,35</td><td>511,28</td><td>489,24</td><td>482,94</td><td>1.006,58</td><td>994,23</td></tr>
+                  <tr><td>25-29</td><td>532,87</td><td>528,84</td><td>508,24</td><td>503,43</td><td>1.041,11</td><td>1.032,27</td></tr>
+                  <tr><td>30-34</td><td>526,06</td><td>524,09</td><td>505,83</td><td>503,50</td><td>1.031,89</td><td>1.027,59</td></tr>
+                  <tr><td>35-39</td><td>515,12</td><td>517,44</td><td>449,73</td><td>501,52</td><td>1.014,85</td><td>1.018,96</td></tr>
+                  <tr><td>40-44</td><td>479,98</td><td>484,95</td><td>469,36</td><td>473,80</td><td>949,34</td><td>958,74</td></tr>
+                  <tr><td>45-49</td><td>437,69</td><td>445,53</td><td>431,95</td><td>440,02</td><td>869,64</td><td>885,55</td></tr>
+                  <tr><td>50-54</td><td>375,51</td><td>386,12</td><td>370,21</td><td>382,13</td><td>745,72</td><td>768,24</td></tr>
+                  <tr><td>55-59</td><td>304,89</td><td>315,29</td><td>298,81</td><td>310,66</td><td>603,70</td><td>625,95</td></tr>
+                  <tr><td>60-64</td><td>233,86</td><td>244,49</td><td>229,28</td><td>241,80</td><td>463,14</td><td>486,29</td></tr>
+                  <tr><td>65-69</td><td>161,13</td><td>169,52</td><td>156,78</td><td>166,68</td><td>317,91</td><td>336,20</td></tr>
+                  <tr><td>70-74</td><td>97,45</td><td>106,69</td><td>98,34</td><td>107,66</td><td>195,79</td><td>214,35</td></tr>
+                  <tr><td>75+</td><td>61,78</td><td>67,61</td><td>77,07</td><td>84,04</td><td>138,86</td><td>151,64</td></tr>
+                  <tr><td><strong>Banten</strong></td><td><strong>6.320,85</strong></td><td><strong>6.369,70</strong></td><td><strong>6.110,54</strong></td><td><strong>6.167,74</strong></td><td><strong>12.431,39</strong></td><td><strong>12.537,44</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: BPS Provinsi Banten, 2025</div>
+            </div>
+
+            <p>
+              Berdasarkan tabel data dari Badan Pusat Statistik Provinsi Banten (2025), jumlah penduduk Provinsi Banten mengalami peningkatan dari 12,43 juta jiwa pada tahun 2024 menjadi 12,54 juta jiwa pada tahun 2025, atau bertambah sekitar 106 ribu jiwa dalam satu tahun. Kenaikan ini relatif seimbang antara penduduk laki-laki dan perempuan, dengan proporsi penduduk laki-laki sedikit lebih tinggi (50,8% pada 2025).
+            </p>
+
+            <p>
+              Secara umum, struktur umur penduduk Banten masih menunjukkan karakteristik penduduk muda, dengan jumlah terbesar berada pada kelompok usia produktif (15–64 tahun). Pada tahun 2025, kelompok umur 25–29 tahun mencatat jumlah tertinggi (sekitar 1,03 juta jiwa), diikuti oleh kelompok umur 30–34 tahun dan 10–14 tahun, masing-masing di atas satu juta jiwa. Hal ini mengindikasikan bahwa Banten masih berada dalam bonus demografi, yaitu kondisi ketika proporsi penduduk usia produktif lebih besar dibandingkan usia non-produktif. Di sisi lain, terdapat tren penurunan jumlah penduduk pada kelompok usia dini (0–4 tahun), dari 986,21 ribu jiwa (2024) menjadi 969,23 ribu jiwa (2025). Penurunan ini dapat menjadi indikator awal dari perlambatan angka kelahiran di wilayah Banten, yang perlu diperhatikan dalam perencanaan jangka panjang, terutama terkait kebijakan pendidikan anak usia dini dan kesehatan ibu-anak.
+            </p>
+
+            <p>
+              Kelompok usia lanjut (60 tahun ke atas) juga menunjukkan pertumbuhan yang konsisten. Jumlah penduduk berusia 60 tahun ke atas meningkat dari sekitar 1,12 juta jiwa pada 2024 menjadi 1,19 juta jiwa pada 2025, yang terdiri dari kelompok usia 60–64 tahun hingga 75 tahun ke atas. Kenaikan ini mengindikasikan adanya proses penuaan penduduk secara bertahap, yang akan memerlukan kebijakan yang mendukung kesejahteraan lansia, termasuk layanan kesehatan, sosial, dan perlindungan jaminan hari tua. Tabel distribusi penduduk menurut jenis kelamin relatif seimbang di seluruh kelompok umur, dengan kecenderungan perempuan mendominasi kelompok usia lanjut, khususnya pada usia 75 tahun ke atas. Hal ini selaras dengan tren umum di berbagai wilayah, di mana perempuan cenderung memiliki angka harapan hidup yang lebih tinggi dibandingkan laki-laki.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Kabupaten</th><th>2010-2020</th><th>2020-2024</th><th>2024-2025</th></tr></thead>
+                <tbody>
+                  <tr><td>Serang</td><td>1,42%</td><td>1,28%</td><td>1,24%</td></tr>
+                  <tr><td>Pandeglang</td><td>0,99%</td><td>1,10%</td><td>1,07%</td></tr>
+                  <tr><td>Lebak</td><td>1,38%</td><td>1,18%</td><td>1,14%</td></tr>
+                  <tr><td>Tangerang</td><td>1,32%</td><td>1,25%</td><td>1,20%</td></tr>
+                </tbody>
+                <thead><tr><th>Kota</th><th>2010-2020</th><th>2020-2024</th><th>2024-2025</th></tr></thead>
+                <tbody>
+                  <tr><td>Serang</td><td>1,76%</td><td>1,61%</td><td>1,58%</td></tr>
+                  <tr><td>Cilegon</td><td>1,46%</td><td>1,25%</td><td>1,21%</td></tr>
+                  <tr><td>Tangerang</td><td>0,51%</td><td>0,95%</td><td>0,83%</td></tr>
+                  <tr><td>Tangerang Selatan</td><td>0,47%</td><td>0,88%</td><td>0,73%</td></tr>
+                  <tr><td><strong>Banten</strong></td><td><strong>1,10%</strong></td><td><strong>1,16%</strong></td><td><strong>1,10%</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: BPS Provinsi Banten, 2025</div>
+            </div>
+
+            <p>
+              Data dari tabel di atas menunjukkan adanya variasi antar kabupaten/kota dalam tiga periode waktu: 2010–2020, 2020–2024, dan 2024–2025. Pada periode 2024–2025, laju pertumbuhan penduduk Provinsi Banten tercatat sebesar 1,10%, menunjukkan penurunan dibandingkan periode sebelumnya (1,16% pada 2020–2024), dan kembali ke angka yang setara dengan rata-rata pertumbuhan pada 2010–2020. Jika dilihat secara spasial, kabupaten umumnya menunjukkan laju pertumbuhan yang lebih tinggi dibandingkan kota, dengan Kabupaten Serang (1,24%) dan Kabupaten Tangerang (1,20%) sebagai wilayah dengan pertumbuhan tertinggi di antara kabupaten. Di sisi lain, Kabupaten Pandeglang (1,07%) dan Lebak (1,14%) menunjukkan pertumbuhan yang sedikit lebih rendah namun relatif stabil. Sementara di wilayah kota, Kota Serang mencatatkan laju pertumbuhan penduduk tertinggi pada 2024–2025 sebesar 1,58%, meskipun terjadi penurunan bertahap dari periode sebelumnya. Kota Tangerang Selatan (0,73%) dan Kota Tangerang (0,83%) memiliki angka pertumbuhan paling rendah, yang konsisten dengan tren penurunan yang terjadi sejak satu dekade terakhir.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Kabupaten</th><th>2020</th><th>2024</th><th>2025</th></tr></thead>
+                <tbody>
+                  <tr><td>Serang</td><td>13,63%</td><td>13,69%</td><td>13,72%</td></tr>
+                  <tr><td>Pandeglang</td><td>10,69%</td><td>10,67%</td><td>10,67%</td></tr>
+                  <tr><td>Lebak</td><td>11,65%</td><td>11,66%</td><td>11,68%</td></tr>
+                  <tr><td>Tangerang</td><td>27,26%</td><td>27,35%</td><td>27,40%</td></tr>
+                </tbody>
+                <thead><tr><th>Kota</th><th>2020</th><th>2024</th><th>2025</th></tr></thead>
+                <tbody>
+                  <tr><td>Serang</td><td>5,81%</td><td>5,91%</td><td>5,95%</td></tr>
+                  <tr><td>Cilegon</td><td>3,65%</td><td>3,67%</td><td>3,67%</td></tr>
+                  <tr><td>Tangerang</td><td>15,92%</td><td>15,80%</td><td>15,73%</td></tr>
+                  <tr><td>Tangerang Selatan</td><td>11,38%</td><td>11,26%</td><td>11,18%</td></tr>
+                  <tr><td><strong>Banten</strong></td><td><strong>100%</strong></td><td><strong>100%</strong></td><td><strong>100%</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: BPS Provinsi Banten, 2025</div>
+            </div>
+
+            <p>
+              Berdasarkan data pada Tabel Persentase Penduduk, dapat dilihat bahwa distribusi penduduk antar kabupaten dan kota di Provinsi Banten menunjukkan pola yang relatif stabil selama lima tahun terakhir. Perubahan yang terjadi bersifat kecil dan tidak menimbulkan pergeseran signifikan antar wilayah. Kondisi ini menandakan bahwa dinamika kependudukan di Provinsi Banten cenderung terkendali, dengan faktor pertumbuhan alami dan migrasi yang seimbang.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Kabupaten</th><th>2020</th><th>2024</th><th>2025</th></tr></thead>
+                <tbody>
+                  <tr><td>Serang</td><td>936</td><td>1.158</td><td>1.170</td></tr>
+                  <tr><td>Pandeglang</td><td>463</td><td>478</td><td>483</td></tr>
+                  <tr><td>Lebak</td><td>405</td><td>438</td><td>442</td></tr>
+                  <tr><td>Tangerang</td><td>3.208</td><td>3.309</td><td>3.342</td></tr>
+                </tbody>
+                <thead><tr><th>Kota</th><th>2020</th><th>2024</th><th>2025</th></tr></thead>
+                <tbody>
+                  <tr><td>Serang</td><td>2.595</td><td>2.765</td><td>2.805</td></tr>
+                  <tr><td>Cilegon</td><td>2.478</td><td>2.804</td><td>2.833</td></tr>
+                  <tr><td>Tangerang</td><td>12.314</td><td>11.012</td><td>11.055</td></tr>
+                  <tr><td>Tangerang Selatan</td><td>9.201</td><td>8.489</td><td>8.505</td></tr>
+                  <tr><td><strong>Banten</strong></td><td><strong>1.232</strong></td><td><strong>1.329</strong></td><td><strong>1.341</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: BPS Provinsi Banten, 2025</div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Kabupaten</th><th>2020</th><th>2024</th><th>2025</th></tr></thead>
+                <tbody>
+                  <tr><td>Serang</td><td>104,73</td><td>104,21</td><td>104,07</td></tr>
+                  <tr><td>Pandeglang</td><td>105,51</td><td>105,00</td><td>104,86</td></tr>
+                  <tr><td>Lebak</td><td>106,14</td><td>105,71</td><td>105,59</td></tr>
+                  <tr><td>Tangerang</td><td>104,78</td><td>104,14</td><td>103,97</td></tr>
+                </tbody>
+                <thead><tr><th>Kota</th><th>2020</th><th>2024</th><th>2025</th></tr></thead>
+                <tbody>
+                  <tr><td>Serang</td><td>104,68</td><td>104,20</td><td>104,07</td></tr>
+                  <tr><td>Cilegon</td><td>103,22</td><td>102,65</td><td>102,49</td></tr>
+                  <tr><td>Tangerang</td><td>102,41</td><td>101,62</td><td>101,40</td></tr>
+                  <tr><td>Tangerang Selatan</td><td>100,29</td><td>99,54</td><td>99,31</td></tr>
+                  <tr><td><strong>Banten</strong></td><td><strong>104,4</strong></td><td><strong>103,44</strong></td><td><strong>102,27</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: BPS Provinsi Banten, 2025</div>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               BAB 3
+               ============================================================ -->
+          <div class="bab" id="bab3">
+            <div class="bab-header">
+              <span class="bab-number">BAB 3</span>
+              <span class="bab-title">Lembaga Pendidikan Bidang Kebudayaan</span>
+            </div>
+
+            <div class="bab-sub">3.1 Lembaga Pendidikan Menengah Bidang Kebudayaan</div>
+            <p>
+              Provinsi Banten, lembaga pendidikan menengah yang bergerak dalam bidang kebudayaan, semisal pariwisata, agribisnis dan agroteknologi, seni rupa dan kriya, seni pertunjukan, seni dan industri kreatif, serta seni, kerajinan, dan pariwisata tergolong banyak.
+            </p>
+
+            <div class="bab-sub-sm">A. SMK Bidang Agribisnis dan Agroteknologi</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Nama SMK</th><th>Status</th><th>Kabupaten/Kota</th><th>Kecamatan</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>SMKN 5 Pandeglang</td><td>Negeri</td><td>Kab. Pandeglang</td><td>Kec. Cikeusik</td></tr>
+                  <tr><td>2</td><td>SMKS Roudlotul Ihsan</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Sobang</td></tr>
+                  <tr><td>3</td><td>SMKS FA Bani Hamim</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Kaduhejo</td></tr>
+                  <tr><td>4</td><td>SMK Manbael Huda</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Mandalawangi</td></tr>
+                  <tr><td>5</td><td>SMK As Shof</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Sindangresmi</td></tr>
+                  <tr><td>6</td><td>SMKN 2 Pandeglang</td><td>Negeri</td><td>Kab. Pandeglang</td><td>Kec. Pandeglang</td></tr>
+                  <tr><td>7</td><td>SMKN 7 Pandeglang</td><td>Negeri</td><td>Kab. Pandeglang</td><td>Kec. Karang Tanjung</td></tr>
+                  <tr><td>8</td><td>SMK Mathaul Anwar Sukalangu</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Saketi</td></tr>
+                  <tr><td>9</td><td>SMKS An Nahdlah</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Cimanuk</td></tr>
+                  <tr><td>10</td><td>SMKN 12 Pandeglang</td><td>Negeri</td><td>Kab. Pandeglang</td><td>Kec. Cibaliung</td></tr>
+                  <tr><td>11</td><td>SMKS Al Hikmah</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Cipeucang</td></tr>
+                  <tr><td>12</td><td>SMKS Mardhatillah</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Picung</td></tr>
+                  <tr><td>13</td><td>SMKN 6 Pandeglang</td><td>Negeri</td><td>Kab. Pandeglang</td><td>Kec. Sobang</td></tr>
+                  <tr><td>14</td><td>SMKN 3 Pandeglang</td><td>Negeri</td><td>Kab. Pandeglang</td><td>Kec. Labuan</td></tr>
+                  <tr><td>15</td><td>SMKS Banten Raya</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Koroncong</td></tr>
+                  <tr><td>16</td><td>SMK NU Nurul Mursyidah</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Karang Tanjung</td></tr>
+                  <tr><td>17</td><td>SMKS Muhammadiyah 1 Leuwidamar</td><td>Swasta</td><td>Kab. Lebak</td><td>Kec. Lewu Damar</td></tr>
+                  <tr><td>18</td><td>SMKS Banten Raya</td><td>Negeri</td><td>Kab. Lebak</td><td>Kec. Warung Guning</td></tr>
+                  <tr><td>19</td><td>SMKS Muhammadiyah 1 Rangkasbitung</td><td>Swasta</td><td>Kab. Lebak</td><td>Kec. Rangkasbitung</td></tr>
+                  <tr><td>20</td><td>SMKN 2 Rangkasbitung</td><td>Negeri</td><td>Kab. Lebak</td><td>Kec. Rangkasbitung</td></tr>
+                  <tr><td>21</td><td>SMKS Daarul Fikri</td><td>Swasta</td><td>Kab. Lebak</td><td>Kec. Malingping</td></tr>
+                  <tr><td>22</td><td>SMKN 1 Curugbitung</td><td>Negeri</td><td>Kab. Lebak</td><td>Kec. Curug</td></tr>
+                  <tr><td>23</td><td>SMKS Guna Bangsa</td><td>Swasta</td><td>Kab. Lebak</td><td>Kec. Banjarsari</td></tr>
+                  <tr><td>24</td><td>SMKN 1 Sobang</td><td>Negeri</td><td>Kab. Lebak</td><td>Kec. Sobang</td></tr>
+                  <tr><td>25</td><td>SMKS Nurul Madany</td><td>Swasta</td><td>Kab. Lebak</td><td>Kec. Cipanas</td></tr>
+                  <tr><td>26</td><td>SMKS Bina Insani Cijeruk</td><td>Swasta</td><td>Kab. Tangerang</td><td>Kec. Mekar Baru</td></tr>
+                  <tr><td>27</td><td>SMKN 5 Kab. Tangerang Mauk</td><td>Negeri</td><td>Kab. Tangerang</td><td>Kec. Mauk</td></tr>
+                  <tr><td>28</td><td>SMKN 2 Kab. Tangerang</td><td>Negeri</td><td>Kab. Tangerang</td><td>Kec. Sepatan</td></tr>
+                  <tr><td>29</td><td>SMKS Mutahir</td><td>Swasta</td><td>Kab. Lebak</td><td>Kec. Rangkasbitung</td></tr>
+                  <tr><td>30</td><td>SMKN 2 Tangerang</td><td>Negeri</td><td>Kota Tangerang</td><td>Kec. Tangerang</td></tr>
+                  <tr><td>31</td><td>SMKN Pertanian</td><td>Negeri</td><td>Kota Serang</td><td>Kec. Taktakan</td></tr>
+                  <tr><td>32</td><td>SMKN 7 Kota Serang</td><td>Negeri</td><td>Kota Serang</td><td>Kec. Cipocok Jaya</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== B. SMK Pariwisata ===== -->
+            <div class="bab-sub-sm">B. SMK Pariwisata</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Nama SMK</th><th>Status</th><th>Kabupaten/Kota</th><th>Kecamatan</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>SMKN 1 Pandeglang</td><td>Swasta</td><td>Kab. Lebak</td><td>Kec. Rangkasbitung</td></tr>
+                  <tr><td>2</td><td>SMKS Raya Wisata Cikadu</td><td>Negeri</td><td>Kota Tangerang</td><td>Kec. Tangerang</td></tr>
+                  <tr><td>3</td><td>SMKS Al Musyaraftah</td><td>Negeri</td><td>Kota Serang</td><td>Kec. Taktakan</td></tr>
+                  <tr><td>5</td><td>SMKS Baitul Hamdi</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Menes</td></tr>
+                  <tr><td>6</td><td>SMKS IKPI Labuan</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Labuan</td></tr>
+                  <tr><td>7</td><td>SMKN 3 Pandeglang</td><td>Negeri</td><td>Kab. Pandeglang</td><td>Kec. Labuan</td></tr>
+                  <tr><td>8</td><td>SMKN 2 Rangkasbitung</td><td>Negeri</td><td>Kab. Lebak</td><td>Kec. Rangkasbitung</td></tr>
+                  <tr><td>9</td><td>SMKN 1 Malingping</td><td>Negeri</td><td>Kab. Lebak</td><td>Kec. Malingping</td></tr>
+                  <tr><td>10</td><td>SMKN 4 Tangerang</td><td>Negeri</td><td>Kab. Tangerang</td><td>Kec. Tigaraksa</td></tr>
+                  <tr><td>11</td><td>SMKN 10 Tangerang</td><td>Negeri</td><td>Kab. Tangerang</td><td>Kec. Teluknaga</td></tr>
+                  <tr><td>12</td><td>SMKN 7 Tangerang</td><td>Negeri</td><td>Kab. Tangerang</td><td>Kec. Kelapa Dua</td></tr>
+                  <tr><td>13</td><td>SMKN 11 Tangerang</td><td>Negeri</td><td>Kab. Tangerang</td><td>Kec. Jayanti</td></tr>
+                  <tr><td>14</td><td>SMKS Yaspih</td><td>Swasta</td><td>Kab. Tangerang</td><td>Kec. Rajeg</td></tr>
+                  <tr><td>15</td><td>SMK Kirana Talenta</td><td>Swasta</td><td>Kab. Tangerang</td><td>Kec. Pasar Kemis</td></tr>
+                  <tr><td>16</td><td>SMKS IKPI Labuan</td><td>Negeri</td><td>Kab. Serang</td><td>Kec. Cikande</td></tr>
+                  <tr><td>17</td><td>SMK Pariwisata Al Khairiyah</td><td>Swasta</td><td>Kab. Serang</td><td>Kec. Anyar</td></tr>
+                  <tr><td>18</td><td>SMKN 1 Anyer</td><td>Negeri</td><td>Kab. Serang</td><td>Kec. Anyar</td></tr>
+                  <tr><td>19</td><td>SMKN 1 Cinangka</td><td>Negeri</td><td>Kab. Serang</td><td>Kec. Cinangka</td></tr>
+                  <tr><td>20</td><td>SMKN 1 Tanara</td><td>Negeri</td><td>Kab. Serang</td><td>Kec. Tanara</td></tr>
+                  <tr><td>21</td><td>SMKN 3 Cilegon</td><td>Negeri</td><td>Kota Cilegon</td><td>Kec. Jombang</td></tr>
+                  <tr><td>22</td><td>SMKS YP 17 Cilegon</td><td>Swasta</td><td>Kota Cilegon</td><td>Kec. Jombang</td></tr>
+                  <tr><td>23</td><td>SMKS Al- Ishlah</td><td>Swasta</td><td>Kota Cilegon</td><td>Kec. Jombang</td></tr>
+                  <tr><td>24</td><td>SMKS Manggala</td><td>Swasta</td><td>Kota Tangerang</td><td>Kec. Karang Tengah</td></tr>
+                  <tr><td>25</td><td>SMKS Bandara</td><td>Swasta</td><td>Kota Tangerang</td><td>Kec. Benda</td></tr>
+                  <tr><td>26</td><td>SMKS Gema Gawita</td><td>Swasta</td><td>Kota Tangerang</td><td>Kec. Tangerang</td></tr>
+                  <tr><td>27</td><td>SMKN 3 Tangerang</td><td>Negeri</td><td>Kota Tangerang</td><td>Kec. Tangerang</td></tr>
+                  <tr><td>28</td><td>SMK Binusta</td><td>Swasta</td><td>Kota Tangerang</td><td>Kec. Cipondoh</td></tr>
+                  <tr><td>29</td><td>SMKS At Thahirin 3</td><td>Swasta</td><td>Kota Tangerang</td><td>Kec. Ciledug</td></tr>
+                  <tr><td>30</td><td>SMKS Setia Bhakti</td><td>Swasta</td><td>Kota Tangerang</td><td>Kec. Tangerang</td></tr>
+                  <tr><td>31</td><td>SMKN 1 Kota Serang</td><td>Negeri</td><td>Kota Serang</td><td>Kec. Serang</td></tr>
+                  <tr><td>32</td><td>SMKS Pasundan 1 Kota Serang</td><td>Swasta</td><td>Kota Serang</td><td>Kec. Cipocok Jaya</td></tr>
+                  <tr><td>33</td><td>SMKS Insan Aqilah</td><td>Swasta</td><td>Kota Serang</td><td>Kec. Walantaka</td></tr>
+                  <tr><td>34</td><td>SMKN 3 Kota Serang</td><td>Negeri</td><td>Kota Serang</td><td>Kec. Walantaka</td></tr>
+                  <tr><td>35</td><td>SMKS Al Had Nusantara Kota Serang</td><td>Swasta</td><td>Kota Serang</td><td>Kec. Taktakan</td></tr>
+                  <tr><td>36</td><td>SMKS IPTEK Tangerang Selatan</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Setu</td></tr>
+                  <tr><td>37</td><td>SMKS Mahkota Wisata</td><td>Negeri</td><td>Kota Tangerang Selatan</td><td>Kec. Pondok Aren</td></tr>
+                  <tr><td>38</td><td>SMKS Puspita Bangsa</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Ciputat</td></tr>
+                  <tr><td>39</td><td>SMKS Pariwisata Puspa Wisata PGRI Serpong</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Serpong</td></tr>
+                  <tr><td>40</td><td>SMKS Fadilah</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Pondok Aren</td></tr>
+                  <tr><td>41</td><td>SMKN 1 Tangerang Selatan</td><td>Negeri</td><td>Kota Tangerang Selatan</td><td>Kec. Serpong</td></tr>
+                  <tr><td>42</td><td>SMKS Nusantara 1 Ciputat</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Ciputat Timur</td></tr>
+                  <tr><td>43</td><td>SMKS Bina Wisata</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Pondok Aren</td></tr>
+                  <tr><td>44</td><td>SMKS Bina Wisata</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Pondok Aren</td></tr>
+                  <tr><td>45</td><td>SMKS Ilamiyah Ciputat</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Ciputat Timur</td></tr>
+                  <tr><td>46</td><td>SMKS Waskito</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Ciputat</td></tr>
+                  <tr><td>47</td><td>SMKS YMJ Ciputat</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Ciputat Timur</td></tr>
+                  <tr><td>48</td><td>SMKN 7 Kota Tangerang Selatan</td><td>Negeri</td><td>Kota Tangerang Selatan</td><td>Kec. Ciputat Timur</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== C. SMK Seni Rupa dan Kriya ===== -->
+            <div class="bab-sub-sm">C. SMK Seni Rupa dan Kriya</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Nama SMK</th><th>Status</th><th>Kabupaten/Kota</th><th>Kecamatan</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>SMKS Art Design</td><td>Swasta</td><td>Kab. Serang</td><td>Kec. Cikeusal</td></tr>
+                  <tr><td>2</td><td>SMKS Strada Daan Mogot</td><td>Swasta</td><td>Kota Tangerang</td><td>Kec. Karawaci</td></tr>
+                  <tr><td>3</td><td>SMKS Bina Informatika</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Ciputat</td></tr>
+                  <tr><td>4</td><td>SMKN 3 Kota Tangerang Selatan</td><td>Negeri</td><td>Kota Tangerang Selatan</td><td>Kec. Setu</td></tr>
+                  <tr><td>5</td><td>SMK Letris Indonesia 2</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Pamulang</td></tr>
+                  <tr><td>6</td><td>SMKS TI PGRI 11 Serpong</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Serpong</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== D. SMK Seni dan Industri Kreatif ===== -->
+            <div class="bab-sub-sm">D. SMK Seni dan Industri Kreatif</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Nama SMK</th><th>Status</th><th>Kabupaten/Kota</th><th>Kecamatan</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>SMKN 1 Pandeglang</td><td>Negeri</td><td>Kab. Pandeglang</td><td>Kec. Kaduhejo</td></tr>
+                  <tr><td>2</td><td>SMKS Bina Am Mamur</td><td>Swasta</td><td>Kab. Tangerang</td><td>Kec. Cikupa</td></tr>
+                  <tr><td>3</td><td>SMKS Art Design</td><td>Swasta</td><td>Kab. Serang</td><td>Kec. Cikeusal</td></tr>
+                  <tr><td>4</td><td>SMKS Budi Mulia</td><td>Swasta</td><td>Kota Tangerang</td><td>Kec. Ciledug</td></tr>
+                  <tr><td>5</td><td>SMKS Bina Informatika</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Ciputat</td></tr>
+                  <tr><td>6</td><td>SMKN 3 Kota Tangerang Selatan</td><td>Negeri</td><td>Kota Tangerang Selatan</td><td>Kec. Setu</td></tr>
+                  <tr><td>7</td><td>SMK Letris Indonesia 2</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Pamulang</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== E. SMK Seni Pertunjukan ===== -->
+            <div class="bab-sub-sm">E. SMK Seni Pertunjukan</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Nama SMK</th><th>Status</th><th>Kabupaten/Kota</th><th>Kecamatan</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>SMKN 1 Pandeglang</td><td>Negeri</td><td>Kab. Pandeglang</td><td>Kec. Kaduhejo</td></tr>
+                  <tr><td>2</td><td>SMKS Musik Yayasan Musik Jakarta</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Serpong</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== F. SMK Seni, Kerajinan dan Pariwisata ===== -->
+            <div class="bab-sub-sm">F. SMK Seni, Kerajinan dan Pariwisata</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Nama SMK</th><th>Status</th><th>Kabupaten/Kota</th><th>Kecamatan</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>SMK Mutiara Harapan</td><td>Swasta</td><td>Kab. Pandeglang</td><td>Kec. Koroncong</td></tr>
+                  <tr><td>2</td><td>SMKS Nurul Ilmi Cikupa</td><td>Swasta</td><td>Kab. Tangerang</td><td>Kec. Cikupa</td></tr>
+                  <tr><td>3</td><td>SMKN 4 Kabupaten Tangerang</td><td>Negeri</td><td>Kab. Tangerang</td><td>Kec. Tigaraksa</td></tr>
+                  <tr><td>4</td><td>SMKS Dirgantara</td><td>Swasta</td><td>Kab. Tangerang</td><td>Kec. Sukadiri</td></tr>
+                  <tr><td>5</td><td>SMKN 3 Cilegon</td><td>Negeri</td><td>Kota Cilegon</td><td>Kec. Jombang</td></tr>
+                  <tr><td>6</td><td>SMKS YP 17 Cilegon</td><td>Swasta</td><td>Kota Cilegon</td><td>Kec. Jombang</td></tr>
+                  <tr><td>7</td><td>SMKS Al Had Nusantara Kota Serang</td><td>Swasta</td><td>Kota Serang</td><td>Kec. Taktakan</td></tr>
+                  <tr><td>8</td><td>SMKN 3 Kota Tangerang Selatan</td><td>Negeri</td><td>Kota Tangerang Selatan</td><td>Kec. Setu</td></tr>
+                  <tr><td>9</td><td>SMK Letris Indonesia 2</td><td>Swasta</td><td>Kota Tangerang Selatan</td><td>Kec. Pamulang</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <div class="bab-sub">3.2 Lembaga Pendidikan Tinggi Bidang Kebudayaan</div>
+            <p>
+              Di Provinsi Banten, lembaga pendidikan tinggi baik negeri maupun swasta, yang berhubungan dengan kebudayaan, semisal pariwisata, tata bidang karawati, juga jurusan di bidang kesenian, perfilman, animasi, bahkan bidang antropologi, sosiologi, arkeologi, Bahasa daerah, Bahasa Inggris, Bahasa Indonesia, kajian budaya, sejarah, tradisi lisan, seni, dan hal-hal lain yang berhubungan dengan kebudayaan masih sangat sedikit. Berikut nama perguruan tinggi di Provinsi Banten yang berkaitan dengan kebudayaan.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Perguruan Tinggi</th><th>Fakultas</th><th>Jurusan</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>UNTIRTA</td><td>Keguruan &amp; Ilmu Pendidikan</td><td>Diksatrasia, Pendidikan Seni Drama Tari dan Musik, Pendidikan Sejarah</td></tr>
+                  <tr><td>2</td><td>STKIP Setia Budhi Rangkasbitung</td><td>Keguruan &amp; Ilmu Pendidikan</td><td>Pendidikan Sejarah, Diksatrasia</td></tr>
+                  <tr><td>3</td><td>UIN Sultan Maulana Hasanuddin</td><td>Adab</td><td>Sejarah Kebudayaan Islam</td></tr>
+                  <tr><td></td><td></td><td>Agama Islam</td><td>Bahasa Arab</td></tr>
+                  <tr><td>4</td><td>Universitas Muhammadiyah Tangerang</td><td>Keguruan &amp; Ilmu Pendidikan</td><td>Bahasa Inggris, Bahasa Jepang</td></tr>
+                  <tr><td>5</td><td>Universitas Islam Syekh-Yusuf (UNIS)</td><td>Keguruan &amp; Ilmu Pendidikan</td><td>Bahasa Inggris</td></tr>
+                  <tr><td>6</td><td>Universitas Mathla'ul Anwar</td><td>-</td><td>-</td></tr>
+                  <tr><td>7</td><td>Universitas Pamulang</td><td>Fakultas Sastra</td><td>Sastra Inggris, Bahasa Indonesia</td></tr>
+                  <tr><td>8</td><td>Universitas Bina Nusantara</td><td>Ekonomi dan Komunikasi</td><td>Manajemen Hotel</td></tr>
+                  <tr><td></td><td></td><td>Humaniora</td><td>Sastra Cina, Sastra Inggris, Sastra Jepang</td></tr>
+                  <tr><td>9</td><td>Universitas Multimedia Nusantara</td><td>Seni dan Desain</td><td>Film dan Televisi</td></tr>
+                  <tr><td>10</td><td>Universitas Pelita Harapan</td><td>Fakultas Desain</td><td>Desain Interior, Desain Produk, Desain Komunikasi Visual</td></tr>
+                  <tr><td></td><td></td><td>Fakultas Sains dan Teknologi</td><td>Teknologi Pangan</td></tr>
+                  <tr><td>11</td><td>Universitas Swiss German</td><td>Ilmu Pengetahuan</td><td>Teknologi Pangan</td></tr>
+                  <tr><td></td><td></td><td>Administrasi Bisnis dan Humaniora</td><td>Manajemen Hotel dan Pariwisata</td></tr>
+                  <tr><td>12</td><td>Surya University</td><td>Fakultas Ilmu Hayati</td><td>Teknologi Pangan</td></tr>
+                  <tr><td></td><td></td><td>Fakultas Desain</td><td>Desain Komunikasi Visual</td></tr>
+                  <tr><td>13</td><td>Universitas Matana</td><td>Fakultas Hospitaliti &amp; Pariwisata</td><td>Hospitaliti &amp; Pariwisata</td></tr>
+                  <tr><td>14</td><td>International University Liaison Indonesia</td><td>Fakultas Ilmu Hayati</td><td>Teknologi Pangan</td></tr>
+                  <tr><td>15</td><td>Universitas Buddh Dharma</td><td>Fakultas Sosial dan Humaniora</td><td>Sastra Inggris (S1), Bahasa Inggris (D3)</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               BAB 4
+               ============================================================ -->
+          <div class="bab" id="bab4">
+            <div class="bab-header">
+              <span class="bab-number">BAB 4</span>
+              <span class="bab-title">Data Objek Pemajuan Kebudayaan</span>
+            </div>
+
+            <!-- ===== 4.1 Tradisi Lisan ===== -->
+            <div class="bab-sub">4.1 Tradisi Lisan</div>
+            <p>
+              Tradisi Lisan berupa cerita rakyat adalah bagian dari folklore, sedangkan folklore artinya adalah "sebagian kebudayaan suatu kolektif, yang tersebar dan diwariskan turun-temurun, di antara kolektif macam apa saja, secara tradisional dalam versi yang berbeda, baik dalam bentuk lisan maupun contoh yang disertai dengan gerak isyarat atau alat bantu pengingat" (Danandjaja, 1994 dalam Pudentia dkk, 2008 : 58). Folklore dianggap berbeda dengan kebudayaan secara umum, karena sifat folklore adalah: penyebaran dan pewarisannya bersifat lisan, bersifat tradisional, keberadaannya dalam versi-versi dan varian-varian yang berbeda, bersifat anonim, biasanya mempunyai bentuk berumus, mempunyai kegunaan dalam kehidupan kolektifnya, bersifat pralogis, milik bersama (kolektif), dan pada umumnya bersifat polos dan lugu. Terdapat tiga bentuk folklore, yaitu folklore lisan (verbal folklore), folklore sebagian lisan (partly verbal) dan folklore bukan lisan (non verbal folklore) (Brunvand 1968 dalam Pudentia, 2008 : 58).
+            </p>
+            <p>
+              Dari sisi fungsinya adalah sebagai sistem proyeksi, sebagai alat pengesahan, sebagai alat pedagogic, dan sebagai alat pemaksa berlakunya norma masyarakat dan pengendalian masyarakat (Bascom 1965 dalam Pudentia, 2008 : 73).
+            </p>
+            <p>
+              Contoh cerita rakyat yang berkembang pada masyarakat di Provinsi Banten, khususnya masyarakat Banten Lama, adalah cerita tentang Sultan Haji. Diceritakan bahwa pada masa itu, Sultan Banten yakni Sultan Ageng Tirtayasa meminta putranya bernama Pangeran Dakar untuk pergi menunaikan ibadah haji ke Mekkah, meskipun Pangeran Dakar tidak mau pergi ke Mekkah akan tetapi Sultan Ageng Tirtayasa tetap memerintahkannya. Ada satu syarat yang diucapkan oleh Sultan Ageng Tirtayasa, yakni dia melarang Pangeran Dakar untuk mampir ke Pulo Putri atau Pulau Mejeti sebuah pulau yang berada di daerah Cina. Alkisah pergilah Pangeran Dakar ke Mekkah, dan menunaikan ibadah hajinya di sana, kemudian dia mendapatkan gelar Sultan Abunasr Abdulkahar atau Sultan Haji (Djajadiningrat, 1983:210).
+            </p>
+            <p>
+              Atau cerita tentang keberadaan watugilang, batu berukuran panjang 191 cm, lebar 121 cm, tebal 16 cm, batur kakinya panjang 180 cm, tebal/tingginya 37 cm, lebar 114 cm, yang saat ini berada di sisi Utara Istana Surasowan. Dikisahkan bahwa watugilang merupakan singgasana Maulana Hasanuddin yang diduduki Batara Guru Jampang ketika melakukan tapanya. Ketika melakukan tapa, Maulana Hasanuddin tidak bergerak, ia duduk di batu tersebut, sehingga burung-burung emprit (pipit) telah membuat sarangnya di dalam ketu atau ikat-kepalanya (Pupuh XVIII, Sajarah Banten dalam Dajadiningrat, 1983:35-36). Watugilang (watu gigilang) tersebut tidak boleh dipindahkan dari tempatnya, karena hal dengan dipindahkannya watugilang tersebut, berarti jatuhnya negeri ini (Pupuh XIX Sajarah banten dalam Dajadiningrat, 1983:36).
+            </p>
+            <p>
+              Bahkan cerita/dongeng yang melegenda dengan sendirinya, adalah keberadaan meriam kuno di Banten Lama. Meriam yang bernama Ki Amuk atau Ki Jimat itu, selalu dikaitkan dengan keberadaan Pandeglang, sebuah kota di sebelah Selatan Istana Surasowan. Dikisahkan ada seorang puteri di daerah Mandalawangi, tepatnya di Kampung Cilambungan (ada yang menyebut Cilampungan), bernama Putri Grajati anak dari Sanghyang Kanali Putih. Sang Putri memiliki kebiasaan, apabila bulan purnama tiba, ia sempatkan mandi di telaga Cilambungan di dekat sungai Cilemer. Pada suatu purnama, ketika ia mandi di sungai Cilambungan, alangkah terkejutnya saat melihat sekitar menjadi gelap gulita. Tak berapa lam, dalam kegelapan malam, keluarlah cahaya terang yang di dalamnya nampak sesosok pemuda yang berparas tampan, seraya berkata, "aku adalah Dewa Putra, ambillah buah ini, dan segeralah makan..!". Putri Grajati pun kaget bukan kepalang, dengan diliputi rasa heran Sang Putri-pun memakan buah tersebut, anehnya suasana kembali terang seperti sedia kala.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Kabupaten/Kota</th><th>Nama Tradisi Lisan</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>Kabupaten Lebak</td><td>Pupulih Budak Buncireng</td></tr>
+                  <tr><td>2</td><td>Kabupaten Pandeglang</td><td>Pupulih Sasakala Pandeglang</td></tr>
+                  <tr><td>3</td><td>Kabupaten Serang</td><td>Pupulih Cerita Rakyat</td></tr>
+                  <tr><td>4</td><td>Kota Serang</td><td>Asal Usul Nama Kampung, Cerita Mas Jakarta Meninggal tanpa kubur, Miyanti (Cerita Hantu), Pitutur (nyanyian sebelum adzan), Pantun Sidiran, Sawung Patok, Adu Ayam Hasanuddin - Pucuk Umun, Kepuh Denok</td></tr>
+                  <tr><td>5</td><td>Kota Cilegon</td><td>Rangda Kari, Mang Rapiun, Ki Buja "Penguasa Waduk Krenceng"</td></tr>
+                  <tr><td>6</td><td>Kota Tangerang</td><td>-</td></tr>
+                  <tr><td>7</td><td>Kota Tangerang Selatan</td><td>-</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== 4.2 Manuskrip ===== -->
+            <div class="bab-sub">4.2 Manuskrip</div>
+            <p>
+              Sebagai wilayah eks Kesultanan, Provinsi Banten tentunya menyimpan banyak sekali manuskrip (naskah kuno), baik yang bercerita tentang perjalanan pada masa itu, tentang cara bercocok tanam, tentang ilmu agama, bahkan manuskrip Al-Quran yang ditulis tangan pada masa silam. Manuskrip-manuskrip tersebut ada yang tersimpan di Museum Situs Purbakala Banten Lama, Museum Negeri Provinsi Banten, Dinas Perpustakaan dan Kearsipan Provinsi Banten, di institusi atau lembaga kajian kebudayaan, bahkan di perorangan atau individu.
+            </p>
+
+            <div class="highlight-box">
+              <h4><i class="fas fa-scroll"></i> Data Manuskrip di Banten</h4>
+              <ul>
+                <li><strong>Kota Serang:</strong> 72 naskah (Dinas Perpus), 5 naskah (Bantenologi), 32 naskah (Yadi Ahyadi), 10 naskah (Museum Banten Girang), 5 naskah (Fahruroji Hatta), 1 naskah (Makam Pangeran Mas), 1 naskah (Bapak Safani), 1 naskah (Kampung Kenari), 1 naskah (Bayu Siffa)</li>
+                <li><strong>Kab. Serang:</strong> 102 naskah (Lempuyang Tanara), 2 naskah (Pulo Ampel), 1 naskah (Pontang), 2 naskah (Cisait Kragilan), 2 naskah (Sujung Tirtayasa), 3 naskah (Tersaba Tanara), 2 naskah (Museum Tirtayasa), 1 naskah (Sumur Lubang Salira)</li>
+                <li><strong>Kab. Tangerang:</strong> 2 naskah (Gembong Jayanti), 2 naskah (Gagas Selawе Gunung Kaler), 1 naskah (Kresek), 1 naskah (Cikupa)</li>
+                <li><strong>Kota Cilegon:</strong> 6 naskah (Lebak Gede Merak), 1 naskah (Purwakarta), 6 naskah (YP Al-Jauharotunn aqiyah Cibeber), 1 naskah (Palas Bendungan)</li>
+                <li><strong>Kab. Pandeglang:</strong> 1 naskah (Keroncong)</li>
+                <li><strong>Kab. Lebak:</strong> 1 naskah (KH Tajudin Cileles Cipanas), 1 naskah (Kp Malangnengah Cipanas), 1 naskah (H.M. Royani Maswi)</li>
+              </ul>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Jenis Naskah</th><th>Jumlah</th></tr></thead>
+                <tbody>
+                  <tr><td>Fiqih</td><td>4</td></tr>
+                  <tr><td>Tasawuf</td><td>3</td></tr>
+                  <tr><td>Tata Bahasa Arab</td><td>8</td></tr>
+                  <tr><td>Hagiografi</td><td>1</td></tr>
+                  <tr><td>Tauhid/Kalam</td><td>12</td></tr>
+                  <tr><td>Tafsir</td><td>2</td></tr>
+                  <tr><td>Sejarah dan Sastra</td><td>6</td></tr>
+                  <tr><td><strong>Total</strong></td><td><strong>36</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Jenis Bahasa</th><th>Jumlah</th></tr></thead>
+                <tbody>
+                  <tr><td>Arab</td><td>70</td></tr>
+                  <tr><td>Jawa</td><td>25</td></tr>
+                  <tr><td>Melayu</td><td>5</td></tr>
+                  <tr><td>Sunda</td><td>1</td></tr>
+                  <tr><td><strong>Total</strong></td><td><strong>101</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Jenis Aksara</th><th>Jumlah</th></tr></thead>
+                <tbody>
+                  <tr><td>Arab</td><td>28</td></tr>
+                  <tr><td>Pegon</td><td>7</td></tr>
+                  <tr><td><strong>Total</strong></td><td><strong>35</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== 4.3 Adat Istiadat ===== -->
+            <div class="bab-sub">4.3 Adat Istiadat</div>
+            <p>
+              Pada dasarnya, adat istiadat hidup dan berkembang di masyarakat. Tidak ada sekelompok masyarakat di manapun yang hidup tanpa adat istiadatnya. Boleh jadi adat istiadat berupa sistem nilai-nilai yang berkembang di masyarakat, atau sistem ilmu pengetahuan yang terus tumbuh pada kelompok-kelompok, bahkan sistem simbolik yang terus digunakan oleh sekumpulan warga, dan itu semua diturunkan kepada generasi berikutnya untuk melanggengkan kebiasaannya.
+            </p>
+            <p>
+              Pada masyarakat di Provinsi Banten dengan mayoritas entitas sunda dan minoritas Jawa memiliki adat istiadat yang sangat luhur dan harus tetap dilestarikan. Meskipun demikian dalam kondisi saat ini, adat istiadat masyarakat mengalami tantangan degradasi atas masuknya kebiasaan-kebiasaan asing akibat dari perubahan sosiokultural yang terjadi masyarakat.
+            </p>
+            <p>
+              Berdasarkan hasil pengumpulan borang yang dilakukan oleh 8 (delapan) Kabupaten/Kota se Provinsi Banten, hanya 4 (empat) Kabupaten/Kota yang mengumpulkan. Adat istiadat di Provinsi Banten terdiri dari: gotong royong, ngaronda, ngala lauk, seren taun, panjang mulud, rebo wakasan, seba baduy, ngadan lain sebagainya.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Kabupaten/Kota</th><th>Nama Adat Istiadat</th><th>Deskripsi</th></tr></thead>
+                <tbody>
+                  <tr><td rowspan="8">1</td><td rowspan="8">Kota Serang</td><td>Rowahan</td><td>Ritual dalam penyambutan bulan nisfu sa'ban yang akan memasuki bulan suci ramadhan.</td></tr>
+                  <tr><td>Rebo Wakasan</td><td>Ritual memperingati rabu terakhir dalam bulan syafar untuk mencari keselamatan dan kedamaian.</td></tr>
+                  <tr><td>Muludan</td><td>Ritual pengangkatan Sultan Banten dari Mekah sekaligus merayakan hari lahir Nabi Muhammad.</td></tr>
+                  <tr><td>Mulud Fatimah</td><td>Ritual memperingati hari lahir ibunda Syech Abdul Qodir Jaelani pada bulan Robiussani.</td></tr>
+                  <tr><td>Rajaban dan 1 Muharram</td><td>Kegiatan memperingati Isro Mi'roj Nabi Muhammad dan perayaan tahun baru Islam yang biasanya dirayakan dengan pemotongan kambing atau sapi dan membuat bubur.</td></tr>
+                  <tr><td>Ratiban</td><td>Ritual kematian yang dilakukan untuk mendoakan serta mengenang orang yang sudah meninggal setiap 7 hari, 40 hari, 100 hari, dan setiap tahun.</td></tr>
+                  <tr><td>Ritual Kehamilan</td><td>Biasa dilakukan ketika kandungan menginjak usia 4-7 bulan, disertai dengan pembuatan kue seperti rujak, sekul langgi dan lain-lain.</td></tr>
+                  <tr><td>Ritual seserahan, pembacaan manahib</td><td>Ritual seserahan barang hantar yang diiringi dengan salawat gustur sebelum pemberangkatan dan yalil ketika hendak masuk pintu. Ritual pembacaan manahib Syech Abdul Qodir Jaelani yang dilakukan ketika akan ruat rumah, ruat jalan, dan ruat lainnya.</td></tr>
+                  <tr><td rowspan="14">2</td><td rowspan="14">Kota Cilegon</td><td>Punaran</td><td>Upacara kehamilan usia kandungan 1-3 atau disebut juga ngidam, dengan ditandai ritual nasi ketan kuning sebagai pertanda bahwa perempuan yang sudah menikah sudah mengisi.</td></tr>
+                  <tr><td>Matang wulan</td><td>Upacara kehamilan yang sudah menginjak 4 bulan usia kandungan, ditandai dengan sajian makanan Serbaha (Surabi) dengan dua warna merah dan putih.</td></tr>
+                  <tr><td>Mitung wulan</td><td>Upacara yang diselenggarakan pada saat seorang ibu mengandung 7 bulan agar bayi dan ibu selamat.</td></tr>
+                  <tr><td>Sangang Wulan</td><td>Upacara sembilan bulan dilaksanakan setelah usia kandungan masuk sembilan bulan, diadakan pengajian dan dibuat bubur lolos.</td></tr>
+                  <tr><td>Keboan</td><td>Upacara untuk perempuan yang mengandung lebih dari sembilan bulan bahkan sampai 12 bulan tetapi belum melahirkan.</td></tr>
+                  <tr><td>Suguh Tamu</td><td>Upacara ucapan rasa syukur atas kelahiran cabang bayi, dihadiahi rosulan oleh kasepuhan dan dilanjutkan dengan mengubur ari-ari.</td></tr>
+                  <tr><td>Mendem ari-ari</td><td>Tembuni/placenta (ari-ari) dipandang sebagai saudara bayi karena itu tidak boleh dibuang sembarangan, harus diadakan upacara waktu menguburnya atau menggantungkannya ke pelapon rumah.</td></tr>
+                  <tr><td>Ucul puser</td><td>Setelah bayi terlepas dari tali pusarnya, diadakan selamatan. Tali pusar yang sudah lepas dimasukkan ke dalam wadah, pusar bayi ditutup dengan uang logam/benggol.</td></tr>
+                  <tr><td>Cukuran</td><td>Upacara membersihkan atau menyucikan rambut bayi dari segala macam najis, dilaksanakan pada saat bayi berumur 40 hari.</td></tr>
+                  <tr><td>Turun tanah</td><td>Upacara pertama kali bayi menjejakkan kakinya ke tanah, diselenggarakan setelah bayi dapat merangkak atau melangkah.</td></tr>
+                  <tr><td>Sunatan</td><td>Upacara sunatan/khitanan dilakukan dengan maksud agar alat vitalnya bersih dari najis, biasanya jika anak laki-laki menginjak usia 6 tahun.</td></tr>
+                  <tr><td>Dokon omongan</td><td>Kunjungan orang tua jejaka kepada orang tua si gadis untuk bersilaturahmi dan menyimpan pesan bahwa kelak anak gadisnya akan dilamar.</td></tr>
+                  <tr><td>Seserahan</td><td>Menyerahkan si jejaka calon pengantin pria kepada calon mertuanya untuk dinikahkan kepada si gadis.</td></tr>
+                  <tr><td>Yalil</td><td>Bagian dari seluruh rangkaian acara perkawinan, yalil atau buka pintu adalah kebudayaan Banten yang sampai saat ini masih terdapat di seluruh daerah Banten.</td></tr>
+                  <tr><td></td><td>Sungkeman</td><td>Kedua mempelai sungkem kepada kedua orang tua mempelai untuk memohon do'a restu.</td></tr>
+                  <tr><td></td><td>Saweran</td><td>Perlengkapan yang diperlukan adalah sebuah bokor yang berisi beras kuning, uang kecil (receh) / logam, bunga, dua buah tektek, dan permen.</td></tr>
+                  <tr><td></td><td>Bebotokan</td><td>Tradisi masyarakat Pabuaran Purwakarta Kota Cilegon dalam merayakan rasa syukur pasca panen tiba.</td></tr>
+                  <tr><td></td><td>Bekakak</td><td>Kedua mempelai duduk bersanding berhadap-hadapan, di depan mempelai telah tersedia bekakak ayam dan nasi kuning.</td></tr>
+                  <tr><td rowspan="3">3</td><td rowspan="3">Kota Tangerang Selatan</td><td>Sedekah Bumi</td><td>Rasa syukur masyarakat Tangsel khususnya wilayah pondok benda dan Parakan, dilakukan selama dua malam.</td></tr>
+                  <tr><td>Mencuci Benda Pusaka</td><td>Setiap bulan Maulid atau bulan Rabiul Awal, berbagai benda pusaka yang berada di daerah Serpong dicuci dengan upacara sakral di Keramat Tajug.</td></tr>
+                  <tr><td>Ritual lainnya</td><td>-</td></tr>
+                  <tr><td rowspan="20">4</td><td rowspan="20">Kabupaten Serang</td><td>Punaran</td><td>Upacara kehamilan usia kandungan 1-3 atau disebut juga ngidam, dengan ditandai ritual nasi ketan kuning.</td></tr>
+                  <tr><td>Matang wulan</td><td>Upacara kehamilan yang sudah menginjak 4 bulan usia kandungan, ditandai dengan sajian makanan Serbaha.</td></tr>
+                  <tr><td>Mitung wulan</td><td>Upacara yang diselenggarakan pada saat seorang ibu mengandung 7 bulan agar bayi dan ibu selamat.</td></tr>
+                  <tr><td>Sangang Wulan</td><td>Upacara sembilan bulan dilaksanakan setelah usia kandungan masuk sembilan bulan, diadakan pengajian dan dibuat bubur lolos.</td></tr>
+                  <tr><td>Keboan</td><td>Upacara untuk perempuan yang mengandung lebih dari sembilan bulan tetapi belum melahirkan.</td></tr>
+                  <tr><td>Suguh Tamu</td><td>Upacara ucapan rasa syukur atas kelahiran cabang bayi, dihadiahi rosulan oleh kasepuhan.</td></tr>
+                  <tr><td>Mendem ari-ari</td><td>Tembuni/placenta (ari-ari) dipandang sebagai saudara bayi, harus diadakan upacara waktu menguburnya.</td></tr>
+                  <tr><td>Ucul puser</td><td>Setelah bayi terlepas dari tali pusarnya, diadakan selamatan.</td></tr>
+                  <tr><td>Cukuran</td><td>Upacara membersihkan atau menyucikan rambut bayi dari segala macam najis, dilaksanakan pada saat bayi berumur 40 hari.</td></tr>
+                  <tr><td>Turun tanah</td><td>Upacara pertama kali bayi menjejakkan kakinya ke tanah.</td></tr>
+                  <tr><td>Sunatan</td><td>Upacara sunatan/khitanan dilakukan dengan maksud agar alat vitalnya bersih dari najis.</td></tr>
+                  <tr><td>Dokon omongan, Ngalamar, Seserahan</td><td>Rangkaian adat pernikahan mulai dari kunjungan, lamaran, hingga penyerahan calon pengantin.</td></tr>
+                  <tr><td>Yalil</td><td>Bagian dari rangkaian acara perkawinan, yalil atau buka pintu.</td></tr>
+                  <tr><td>Sungkeman</td><td>Kedua mempelai sungkem kepada kedua orang tua mempelai untuk memohon do'a restu.</td></tr>
+                  <tr><td>Saweran</td><td>Perlengkapan berupa bokor berisi beras kuning, uang kecil, bunga, dan permen.</td></tr>
+                  <tr><td>Bebotokan</td><td>Tradisi masyarakat Pabuaran Purwakarta dalam merayakan rasa syukur pasca panen.</td></tr>
+                  <tr><td>Bekakak</td><td>Kedua mempelai duduk bersanding berhadap-hadapan, di depan mempelai telah tersedia bekakak ayam dan nasi kuning.</td></tr>
+                  <tr><td rowspan="3">3</td><td rowspan="3">Kota Tangerang Selatan</td><td>Sedekah Bumi</td><td>Rasa syukur masyarakat Tangsel khususnya wilayah pondok benda dan Parakan, dilakukan selama dua malam.</td></tr>
+                  <tr><td>Mencuci Benda Pusaka</td><td>Setiap bulan Maulid atau bulan Rabiul Awal, berbagai benda pusaka yang berada di daerah Serpong dicuci dengan upacara sakral di Keramat Tajug.</td></tr>
+                  <tr><td>Ritual lainnya</td><td>-</td></tr>
+                  <tr><td rowspan="20">4</td><td rowspan="20">Kabupaten Serang</td><td>Punaran</td><td>Upacara kehamilan usia kandungan 1-3 atau disebut juga ngidam, dengan ditandai ritual nasi ketan kuning.</td></tr>
+                  <tr><td>Matang wulan</td><td>Upacara kehamilan yang sudah menginjak 4 bulan usia kandungan, ditandai dengan sajian makanan Serbaha.</td></tr>
+                  <tr><td>Mitung wulan</td><td>Upacara yang diselenggarakan pada saat seorang ibu mengandung 7 bulan agar bayi dan ibu selamat.</td></tr>
+                  <tr><td>Sangang Wulan</td><td>Upacara sembilan bulan dilaksanakan setelah usia kandungan masuk sembilan bulan, diadakan pengajian dan dibuat bubur lolos.</td></tr>
+                  <tr><td>Keboan</td><td>Upacara untuk perempuan yang mengandung lebih dari sembilan bulan tetapi belum melahirkan.</td></tr>
+                  <tr><td>Suguh Tamu</td><td>Upacara ucapan rasa syukur atas kelahiran cabang bayi, dihadiahi rosulan oleh kasepuhan.</td></tr>
+                  <tr><td>Mendem ari-ari</td><td>Tembuni/placenta (ari-ari) dipandang sebagai saudara bayi, harus diadakan upacara waktu menguburnya.</td></tr>
+                  <tr><td>Ucul puser</td><td>Setelah bayi terlepas dari tali pusarnya, diadakan selamatan.</td></tr>
+                  <tr><td>Cukuran</td><td>Upacara membersihkan atau menyucikan rambut bayi dari segala macam najis, dilaksanakan pada saat bayi berumur 40 hari.</td></tr>
+                  <tr><td>Turun tanah</td><td>Upacara pertama kali bayi menjejakkan kakinya ke tanah.</td></tr>
+                  <tr><td>Sunatan</td><td>Upacara sunatan/khitanan dilakukan dengan maksud agar alat vitalnya bersih dari najis.</td></tr>
+                  <tr><td>Dokon omongan, Ngalamar, Seserahan</td><td>Rangkaian adat pernikahan mulai dari kunjungan, lamaran, hingga penyerahan calon pengantin.</td></tr>
+                  <tr><td>Yalil</td><td>Bagian dari rangkaian acara perkawinan, yalil atau buka pintu.</td></tr>
+                  <tr><td>Sungkeman</td><td>Kedua mempelai sungkem kepada kedua orang tua mempelai untuk memohon do'a restu.</td></tr>
+                  <tr><td>Saweran</td><td>Perlengkapan berupa bokor berisi beras kuning, uang kecil, bunga, dan permen.</td></tr>
+                  <tr><td>Bebotokan</td><td>Tradisi masyarakat Pabuaran Purwakarta dalam merayakan rasa syukur pasca panen.</td></tr>
+                  <tr><td>Bekakak</td><td>Kedua mempelai duduk bersanding berhadap-hadapan, di depan mempelai telah tersedia bekakak ayam dan nasi kuning.</td></tr>
+                  <tr><td>Praphrahan</td><td>Kegiatan masyarakat di desa cikolelet membuat bubur setiap 10 Muharam.</td></tr>
+                  <tr><td>Buka Lawang</td><td>Bagian dari rangkaian acara perkawinan, buka pintu adalah budaya serang.</td></tr>
+                  <tr><td>Paculan</td><td>Tradisi memberikan puluhan bahkan ribuan uang lembaran yang dijadikan anyaman berupa kalung panjang.</td></tr>
+                  <tr><td></td><td>Ngedulagi</td><td>Mempersatukan kedua pengantin.</td></tr>
+                  <tr><td></td><td>Sawer Pengantin (nyawer)</td><td>Kedua pengantin duduk di depan kedua orang tua masing-masing, orang tua menaburkan saweran.</td></tr>
+                  <tr><td></td><td>Ngarak Pengantin</td><td>Pengantin berjalan berkeliling menyalami tamu undangan dan masyarakat sekitar.</td></tr>
+                  <tr><td></td><td>Diborehi</td><td>Prosesi setelah pengantin diarak, pengantin dibawa ke lapangan disuruh duduk berhadapan sambil memegang boneka.</td></tr>
+                  <tr><td></td><td>Ritual Ngaji Tilam</td><td>Ritual yang dilakukan setelah proses pemakaman jenazah selesai, mengaji di makam selama 24 jam tanpa henti.</td></tr>
+                  <tr><td></td><td>Tahlilan</td><td>Upacara untuk mengenang dan mendoakan orang yang telah meninggal.</td></tr>
+                  <tr><td></td><td>Khaulan</td><td>Ritual untuk mengenang satu tahun setelah kematian seseorang.</td></tr>
+                  <tr><td></td><td>Tolak Bala, Nanggalan, Bacakan, Dzikir Mulud, Panjang Mulud, Isra Lail, Pemberian Wakaf, Ziarah</td><td>Berbagai ritual dan tradisi lainnya.</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== 4.4 Ritus ===== -->
+            <div class="bab-sub">4.4 Ritus</div>
+            <p>
+              Ritus dalam Kamus Besar bahasa Indonesia diartikan sebagai tata cara di upacara keagamaan. Menurut Max Gluckman sebagaimana tergambar dalam tulisan Van Genep mengenai The Rites of Passage menyatakan bahwa interpretasi mengenai ritus adalah sebagai media yang mencerminkan struktur dari relasi sosial serta perubahan dalam relasi tersebut. Singkatnya, Genep memahami ritus tidak hanya berlangsung sebagai prosesi upacara keagamaan, tetapi juga menyangkut prosesi hidup sebagai masyarakat; Bagaimana masyarakat berelasi, memahami relasi yang berlangsung, dan menerima perubahan-perubahan dalam relasi sebagai prosesi ritual. Pada posisi demikian, ritus bagi Genep adalah tahapan yang menggambarkan bagaimana realitas sosial dirajut.
+            </p>
+            <p>
+              Di Provinsi Banten, sebagaimana daerah-daerah lain di berbagai tempat, persoalan sebelum manusia hidup, ketika hadir di dunia, manakala beranjak dewasa, hingga kematian terdapat ritus-ritus yang menyelubunginya. Berikut perkembangan anak dalam pola asuh di Banten (Sunda).
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Umur</th><th>Kondisi Anak</th><th>Priangan</th><th>Banten</th><th>Mainan</th><th>Syair</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>0</td><td>Lahir</td><td>Medal</td><td>Nangkarak</td><td>-</td><td>Ngajuru</td></tr>
+                  <tr><td>1</td><td>Komunikasi</td><td>Hao Ha-keng</td><td>Humaong</td><td>-</td><td>-</td></tr>
+                  <tr><td>2</td><td>Melihat, Mendengar</td><td>Narangtang</td><td>Narangtang</td><td>-</td><td>-</td></tr>
+                  <tr><td>3</td><td>Berguling ke pinggir</td><td>Nyanggir</td><td>Nyanggir</td><td>Kain dengan sapu paré</td><td>Neléng néng-kung...</td></tr>
+                  <tr><td>4</td><td>Telungkup sendiri</td><td>Nangkuban</td><td>Nangkuban</td><td>-</td><td>-</td></tr>
+                  <tr><td>5</td><td>Menggerakkan kepala</td><td>Nangkat hulu</td><td>Nangkat hulu</td><td>-</td><td>-</td></tr>
+                  <tr><td>6</td><td>Tumbuh Gigi</td><td>Huntu jadi</td><td>Huntu Jadi</td><td>-</td><td>-</td></tr>
+                  <tr><td>7</td><td>Mencoba merangkak</td><td>Nga-langsud</td><td>Ngangsrod</td><td>-</td><td>-</td></tr>
+                  <tr><td>8</td><td>Mencoba merangkak</td><td>Engong-en-gong</td><td>Eleng-eleg</td><td>-</td><td>-</td></tr>
+                  <tr><td>9</td><td>Duduk</td><td>Diuk</td><td>Diuk</td><td>-</td><td>-</td></tr>
+                  <tr><td>10</td><td>Merangkak</td><td>Ngaran-dang</td><td>Ngorong-dang</td><td>-</td><td>-</td></tr>
+                  <tr><td>11</td><td>Berdiri</td><td>Nangtung</td><td>Nangtung</td><td>-</td><td>-</td></tr>
+                  <tr><td>12</td><td>Melangkah</td><td>Papay-pa-payan</td><td>Papay-pa-payan</td><td>-</td><td>-</td></tr>
+                  <tr><td>13</td><td>Belajar jalan</td><td>Leengkah halu</td><td>Leengkah halu</td><td>-</td><td>-</td></tr>
+                  <tr><td>14</td><td>Berjalan tertatih</td><td>Leengkah eureun</td><td>Leengkah eureun</td><td>-</td><td>-</td></tr>
+                  <tr><td>15</td><td>Jalan dan melangkah</td><td>Leumpang paur</td><td>Leumpang</td><td>Gegerétan</td><td>Bér... layar...</td></tr>
+                  <tr><td>16</td><td>Berbicara</td><td>Ngomong</td><td>Ngomong</td><td>-</td><td>-</td></tr>
+                  <tr><td>17</td><td>Jalan tapi miring</td><td>Aya ka-hayang</td><td>Aya ka-hayang</td><td>-</td><td>-</td></tr>
+                  <tr><td>18</td><td>Meminta</td><td>Punta-pénta</td><td>Punta-pénta</td><td>-</td><td>-</td></tr>
+                  <tr><td>19</td><td>Mengambil</td><td>Cukat-cokot</td><td>Cukat-cokot</td><td>-</td><td>Paciwit-ciwit lutung...</td></tr>
+                  <tr><td>20</td><td>Menggigit</td><td>Badeur</td><td>Ngégél</td><td>-</td><td>-</td></tr>
+                  <tr><td>21</td><td>Memukul</td><td>Nolowor</td><td>Ngagebug</td><td>-</td><td>-</td></tr>
+                  <tr><td>22</td><td>Meniru</td><td>Kawalangket</td><td>Nulad, nurutan</td><td>-</td><td>-</td></tr>
+                  <tr><td>23</td><td>Ingin segala dilakukan</td><td>Loba ka-hayang</td><td>Loba ka-hayang</td><td>-</td><td>-</td></tr>
+                  <tr><td>2</td><td>Dimanja</td><td>Bele, ogo</td><td>Ogoan</td><td>-</td><td>-</td></tr>
+                  <tr><td>3</td><td>Mulai main atau bergaul</td><td>Bilatung dulang</td><td>Simseu</td><td>-</td><td>-</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Diadaptasi dari Ali Sastramidjaja "Ngawanohan Awak Sakujur" dan Wawancara dengan Eni Nuraeni (70 tahun)</div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Kabupaten/Kota</th><th>Nama Ritus</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>Kota Serang</td><td>Payung Rumah, Ziarah Menjelang Ramadhan, Marhaban, Muharaman, Suguh Tamu, Pesta Laut (Pesta Nelayan), Keramasan, Pembangunan Rumah, Sedekah Bumi, Lebaran Fitrah</td></tr>
+                  <tr><td>2</td><td>Kota Cilegon</td><td>Panjang Mulud</td></tr>
+                  <tr><td>3</td><td>Kota Tangerang</td><td>-</td></tr>
+                  <tr><td>4</td><td>Kota Tangerang Selatan</td><td>-</td></tr>
+                  <tr><td>5</td><td>Kabupaten Serang</td><td>Legenda Gunung Pinang</td></tr>
+                  <tr><td>6</td><td>Kabupaten Tangerang</td><td>-</td></tr>
+                  <tr><td>7</td><td>Kabupaten Pandeglang</td><td>-</td></tr>
+                  <tr><td>8</td><td>Kabupaten Lebak</td><td>Ngaseuk, Nganyaran pare, Mipit, Seren Taun (Ritus Pangan)</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== 4.5 Pengetahuan Tradisional ===== -->
+            <div class="bab-sub">4.5 Pengetahuan Tradisional</div>
+            <p>
+              Dalam hal pengetahuan tradisional ada yang disebut obat-obatan tradisional, masyarakat adat mengenal beberapa jenis tumbuhan yang dapat digunakan sebagai obat-obatan, di antaranya:
+            </p>
+            <ul>
+              <li><strong>Lampuyang</strong> (sejenis umbi-umbian) untuk penambah nafsu makan dan penambah darah. Lampuyang juga bisa untuk bentol-bentol, dengan cara diminum atau dioleskan.</li>
+              <li><strong>Koneng gede</strong> untuk penyakit liver atau lambung yang peres kemudian dicampur dengan gula aren. Kuning gede ditambah dengan kunjit untuk penyakit maag.</li>
+              <li><strong>Pucuk nangkawalan</strong> (daun sirsak) dan sereh untuk obat asam urat. Bisa direbus atau parud atau dikeringkan kemudian dijadikan teh. Obat ini diminum setelah makan.</li>
+              <li><strong>Daun sereh wangi</strong> (daun sereh kanggo nyepah), dengan daun jeruk dan daun rambutan aceh dicampur rebus untuk mengobati panas yang tidak sembuh-sembuh.</li>
+              <li><strong>Daun burung rana</strong> untuk obat meriang (demam).</li>
+              <li><strong>Tacapi</strong> (daun sembung) untuk obat seluruh badan.</li>
+              <li><strong>Daun kumis kucing</strong> dengan daun Kibeling untuk obat nyeri cangkeng (nyeri pinggang).</li>
+              <li><strong>Daun antanan</strong> yang diparut untuk penyakit jantung.</li>
+              <li><strong>Bonteng</strong> (timun) direbus untuk darah tinggi.</li>
+              <li><strong>Gula merah</strong> dengan air panas untuk orang yang kurang darah.</li>
+              <li><strong>Kepala hejo</strong> yang muda ditambah gula merah untuk penyakit ginjal.</li>
+              <li><strong>Daun kapila</strong> untuk obat radang kulit.</li>
+              <li><strong>Kuning telor</strong> ayam kampung direbus dan dijemur kemudian ditumbuk untuk menghilangkan bekas luka.</li>
+              <li><strong>Panglai</strong> yang diparut untuk mengobati jerawat.</li>
+              <li><strong>Bahan-bahan jamu</strong> untuk ibu-ibu yang habis melahirkan: daun cente, daun harenong, daun ater, daun jewer kotok, daun cape, daun sereh (sedikit saja), lempuyang, koneng gede, cikur dan kunyit.</li>
+              <li><strong>Buah leunca</strong> untuk obat amandel, dimakan sebagai lalaban.</li>
+              <li><strong>Beras hitam</strong> dengan garam dibubur untuk menambah air susu ibu, atau daun waluh dikulub kemudian dimakan.</li>
+              <li><strong>Lebu</strong> (abu kayu) dengan dikasih garem dikasih air panas kemudian disaring untuk obat sumbilangen.</li>
+              <li><strong>Daun pacikrak</strong> yang ditumbuk untuk obat sakit kepala.</li>
+              <li><strong>Kapur hangat</strong> (dari beras yang dijadikan tipung dan dicapur dengan kencur) untuk bayi yang baru dilahirkan agar si bayi hangat.</li>
+            </ul>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Kabupaten/Kota</th><th>Nama Pengetahuan Tradisional</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>Kota Serang</td><td>Jurus Silat Terumbu, Pijat Balita, Menghias Panjang Mulud, Memasak Sate Bandeng, Memasak Rabeg, Memasak Ketan Bintul</td></tr>
+                  <tr><td>2</td><td>Kota Cilegon</td><td>-</td></tr>
+                  <tr><td>3</td><td>Kota Tangerang</td><td>-</td></tr>
+                  <tr><td>4</td><td>Kota Tangerang Selatan</td><td>-</td></tr>
+                  <tr><td>5</td><td>Kabupaten Serang</td><td>Gerem Asem</td></tr>
+                  <tr><td>6</td><td>Kabupaten Tangerang</td><td>-</td></tr>
+                  <tr><td>7</td><td>Kabupaten Pandeglang</td><td>-</td></tr>
+                  <tr><td>8</td><td>Kabupaten Lebak</td><td>-</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== 4.6 Teknologi Tradisional ===== -->
+            <div class="bab-sub">4.6 Teknologi Tradisional</div>
+            <p>
+              Terdapat perbedaan yang sangat mendasar, antara masyarakat pada umumnya dengan masyarakat Baduy, yang hidup dan berkembang dengan apa adanya. Begitu pula dengan teknologi tradisional. Bagi masyarakat Baduy, terutama Baduy dalam, begitu banyak pantangan menggunakan teknologi yang datang dari luar.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Bahasa Sunda (BANTEN)</th><th>Bahasa Jawa (BANTEN)</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>Aseuk</td><td>-</td></tr>
+                  <tr><td>2</td><td>Arit</td><td>Arit</td></tr>
+                  <tr><td>3</td><td>Baléncong</td><td>Baléncong</td></tr>
+                  <tr><td>4</td><td>Baliung (Untuk Menebang Pohon)</td><td>-</td></tr>
+                  <tr><td>5</td><td>Baliung (Untuk Mengkuliti Pohon)</td><td>-</td></tr>
+                  <tr><td>6</td><td>Bandil</td><td>Ketepél</td></tr>
+                  <tr><td>7</td><td>Golok</td><td>Golok</td></tr>
+                  <tr><td>8</td><td>Étém</td><td>Étém</td></tr>
+                  <tr><td>9</td><td>Kampak</td><td>Kampak</td></tr>
+                  <tr><td>10</td><td>Gacok</td><td>Garut</td></tr>
+                  <tr><td>11</td><td>Garpuh</td><td>-</td></tr>
+                  <tr><td>12</td><td>Gobéd</td><td>-</td></tr>
+                  <tr><td>13</td><td>Jara</td><td>-</td></tr>
+                  <tr><td>14</td><td>Kihkir</td><td>-</td></tr>
+                  <tr><td>15</td><td>Koréd</td><td>Koréd</td></tr>
+                  <tr><td>16</td><td>Kujang</td><td>-</td></tr>
+                  <tr><td>17</td><td>Linggis</td><td>Linggis</td></tr>
+                  <tr><td>18</td><td>Pacul</td><td>Pacul</td></tr>
+                  <tr><td>19</td><td>Palu</td><td>Palu</td></tr>
+                  <tr><td>20</td><td>Peso</td><td>Lading</td></tr>
+                  <tr><td>21</td><td>Ragaji</td><td>Gergaji</td></tr>
+                  <tr><td>22</td><td>Pananggung</td><td>-</td></tr>
+                  <tr><td>23</td><td>Salumbat</td><td>-</td></tr>
+                  <tr><td>24</td><td>Sugu</td><td>Sugu</td></tr>
+                  <tr><td>25</td><td>Sumplit</td><td>-</td></tr>
+                  <tr><td>26</td><td>Tatah</td><td>-</td></tr>
+                  <tr><td>27</td><td>Bubu</td><td>-</td></tr>
+                  <tr><td>28</td><td>Sair</td><td>Sésér</td></tr>
+                  <tr><td>29</td><td>Jaring</td><td>Jaring</td></tr>
+                  <tr><td>30</td><td>Useup</td><td>-</td></tr>
+                  <tr><td>31</td><td>Aseupan</td><td>Kukusan</td></tr>
+                  <tr><td>32</td><td>Ayakan</td><td>Ayakan</td></tr>
+                  <tr><td>33</td><td>Nampan</td><td>Nampan</td></tr>
+                  <tr><td>34</td><td>Bakul</td><td>Wakul</td></tr>
+                  <tr><td>35</td><td>Baskom</td><td>Baskom</td></tr>
+                  <tr><td>36</td><td>Céntong</td><td>Céntong</td></tr>
+                  <tr><td>37</td><td>Coét</td><td>Coét</td></tr>
+                  <tr><td>38</td><td>Panggerus</td><td>Gegerus</td></tr>
+                  <tr><td>39</td><td>Didingklik</td><td>Dedingklik</td></tr>
+                  <tr><td>40</td><td>Dulang</td><td>-</td></tr>
+                  <tr><td>41</td><td>Hihid</td><td>Ilir</td></tr>
+                  <tr><td>42</td><td>Emuk</td><td>Gelas</td></tr>
+                  <tr><td>43</td><td>Cangkir</td><td>Cangkir</td></tr>
+                  <tr><td>44</td><td>Gayung</td><td>Gayung</td></tr>
+                  <tr><td>45</td><td>Gentong</td><td>Gentong</td></tr>
+                  <tr><td>46</td><td>Halu</td><td>Alu</td></tr>
+                  <tr><td>47</td><td>Hawu</td><td>Tungku</td></tr>
+                  <tr><td>48</td><td>Kambeuti/Kanderon</td><td>-</td></tr>
+                  <tr><td>49</td><td>Kastrol</td><td>Kendil</td></tr>
+                  <tr><td>50</td><td>Kékéncéng</td><td>Kenceng</td></tr>
+                  <tr><td>51</td><td>Kélé</td><td>-</td></tr>
+                  <tr><td>52</td><td>Kendi</td><td>Kendi</td></tr>
+                  <tr><td>53</td><td>Tongtrong</td><td>Kentongan</td></tr>
+                  <tr><td>54</td><td>Koja</td><td>-</td></tr>
+                  <tr><td>55</td><td>Lisung</td><td>Lesung</td></tr>
+                  <tr><td>56</td><td>Lodong</td><td>-</td></tr>
+                  <tr><td>57</td><td>Lulumpang</td><td>Lelumpang</td></tr>
+                  <tr><td>58</td><td>Nyiru</td><td>Tampah</td></tr>
+                  <tr><td>59</td><td>Parud</td><td>Parud</td></tr>
+                  <tr><td>60</td><td>Besek</td><td>-</td></tr>
+                  <tr><td>61</td><td>Pangarih</td><td>-</td></tr>
+                  <tr><td>62</td><td>Parako</td><td>-</td></tr>
+                  <tr><td>63</td><td>Piring</td><td>Piring</td></tr>
+                  <tr><td>64</td><td>Rantang</td><td>Rantang</td></tr>
+                  <tr><td>65</td><td>Salang</td><td>Salang</td></tr>
+                  <tr><td>66</td><td>Sendok</td><td>Sendok</td></tr>
+                  <tr><td>67</td><td>Sééng</td><td>-</td></tr>
+                  <tr><td>68</td><td>Sérokan</td><td>Seserok</td></tr>
+                  <tr><td>69</td><td>Sinduk</td><td>Sinduk</td></tr>
+                  <tr><td>70</td><td>Songsong</td><td>-</td></tr>
+                  <tr><td>71</td><td>Talenan</td><td>Talenan</td></tr>
+                  <tr><td>72</td><td>Tampolong</td><td>-</td></tr>
+                  <tr><td>73</td><td>Téko</td><td>Teko</td></tr>
+                  <tr><td>74</td><td>Jarog</td><td>-</td></tr>
+                  <tr><td>75</td><td>Kepék</td><td>-</td></tr>
+                  <tr><td>76</td><td>Alat Tenun Baduy</td><td>-</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Kabupaten/Kota</th><th>Nama Teknologi Tradisional</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>Kota Serang</td><td>Kapal Nelayan, Kapal Banten, Kanal Irigasi, Pengindelan, Pendingin Ruangan Alami, Benteng Zig Zag Kota Banten</td></tr>
+                  <tr><td>2</td><td>Kota Cilegon</td><td>Golok Cilegon</td></tr>
+                  <tr><td>3</td><td>Kota Tangerang</td><td>-</td></tr>
+                  <tr><td>4</td><td>Kota Tangerang Selatan</td><td>-</td></tr>
+                  <tr><td>5</td><td>Kabupaten Serang</td><td>Gerabah</td></tr>
+                  <tr><td>6</td><td>Kabupaten Tangerang</td><td>-</td></tr>
+                  <tr><td>7</td><td>Kabupaten Pandeglang</td><td>-</td></tr>
+                  <tr><td>8</td><td>Kabupaten Lebak</td><td>-</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== 4.7 Seni ===== -->
+            <div class="bab-sub">4.7 Seni</div>
+            <p>
+              Segala perbuatan manusia yang timbul dari perasaannya yang bersifat indah, sehingga dapat menggerakan jiwa perasaan manusia itu sendiri, itulah definisi 'seni' menurut Soerjadi Soerjaningrat atau Ki Hadjar Dewantara (1889-1959) sekira setengah abad silam sebagaimana dikutip Mikke Susanto (2002) dalam buku Diksi Rupa, Kumpulan Istilah Seni Rupa. Lebih jauh Bapak Pendidikan Indonesia itu mengemukakan bahwa nilai-nilai moral dapat diajarkan melalui seni dan kesenian. Senada dengan Ki Hadjar Dewantara, Leo Tolstoy (1828-1910) seorang sastrawan asal Rusia, seperti yang dikutip oleh Jakob Sumardjo (2000:62) mengungkapkan bahwa seni adalah sebuah ungkapan perasaan dari pencipta, yang disampaikan kepada orang lain agar mereka dapat merasakan apa yang dirasakan oleh sang pencipta.
+            </p>
+            <p>
+              Sementara itu menurut Thomas Munro (Susanto, 2002:101), seni adalah sebuah alat buatan manusia, untuk menimbulkan efek-efek psikologis atas manusia yang melihatnya. Efek tersebut mencakup tanggapan-tanggapan manusia yang berwujud pengamatan, pengenalan imajinasi, yang rasional maupun emosional. Sedangkan menurut filsuf dari Yunani, Plato, seni adalah hasil tiruan alam (ars imitator narutam), dengan kata lain Plato ingin mengungkapkan bahwa sesuatu yang dihasilkan merupakan hasil tiruan obyek/benda yang ada di alam.
+            </p>
+
+            <!-- ===== 4.8 Bahasa ===== -->
+            <div class="bab-sub">4.8 Bahasa</div>
+            <p>
+              Jauh sebelum Banten menjadi sebuah pemerintahan provinsi, antara tahun 1920—1923, Mangoendikaria, salah seorang penilik (opzieren) untuk Kabupaten Serang yang sebelumnya seorang kepala sekolah dengan jabatan mantri guru yang berprestasi dan memiliki bakat menulis yang luar biasa, mengadakan pendataan bahasa Sunda yang dipergunakan oleh masyarakat Banten.
+            </p>
+            <p>
+              Ketika tahun 1923, saat Koninklijk Bataviaasch Genotschap van Kunsten en Wetenschapen (Masyarakat Seni dan Ilmu Pengetahuan Kerajaan Belanda di Batavia) menggelar sayembara penyusunan kamus dialek-dialek lokal di seluruh Hindia Belanda untuk para guru dan pegawai pemerintah kolonial, terpilihlah Mas Magoedikaria sebagai juara pertama dan meraih medali emas serta uang 100 gulden.
+            </p>
+            <p>
+              Di dalam deskripsinya berjudul "Dialect Soenda Banten", Mangoendikaria mengemukakan temuannya, antara lain sebagai berikut: "Di karesidenan Banten dipakena basa Soenda teh babakuna ngan di afdeeling Pandeglang djeung Lebak, demi di afdeeling Serang mah ngan tjetjemplokan bae, nja eta disabagian district Anjer anoe tepoeng wates djeung afdeeling Pandeglang, sakidoeleun djalan post (onderdistrict Pasaoran djeung Mantjak). Di district Tjikande sabeulah kidoel, anoe tepoeng wates djeung afdeeling Pandeglang serta afdeeling Lebak."
+            </p>
+            <p>
+              "Basa Soenda Banten, pangrejana tjampoeranana basa Djawa, sabab basa Djawa teh diminangkakeun basa lemesna Soenda Banten." (Bahasa Sunda Banten, paling banyak tercampur oleh Bahasa Jawa, sebab Bahasa Jawa diposisikan sebagai bahasa halus Sunda Banten.)
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Kabupaten/Kota</th><th>Bahasa Sunda Priangan</th><th>Bahasa Sunda Banten</th><th>Bahasa Jawa</th><th>Bahasa Betawi</th><th>Bahasa Lain</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>Kota Serang</td><td>5%</td><td>20%</td><td>70%</td><td>-</td><td>1%</td></tr>
+                  <tr><td>2</td><td>Kota Cilegon</td><td>5%</td><td>5%</td><td>89%</td><td>-</td><td>1%</td></tr>
+                  <tr><td>3</td><td>Kota Tangerang</td><td>10%</td><td>50%</td><td>-</td><td>30%</td><td>10%</td></tr>
+                  <tr><td>4</td><td>Kota Tangerang Selatan</td><td>10%</td><td>50%</td><td>-</td><td>30%</td><td>10%</td></tr>
+                  <tr><td>5</td><td>Kabupaten Serang</td><td>10%</td><td>69%</td><td>20%</td><td>-</td><td>1%</td></tr>
+                  <tr><td>6</td><td>Kabupaten Tangerang</td><td>10%</td><td>79%</td><td>5%</td><td>5%</td><td>1%</td></tr>
+                  <tr><td>7</td><td>Kabupaten Pandeglang</td><td>10%</td><td>89%</td><td>-</td><td>-</td><td>1%</td></tr>
+                  <tr><td>8</td><td>Kabupaten Lebak</td><td>15%</td><td>85%</td><td>-</td><td>-</td><td>-</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: Kantor Bahasa Provinsi Banten</div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Kabupaten/Kota</th><th>Nama Bahasa</th><th>Berkembang</th></tr></thead>
+                <tbody>
+                  <tr><td rowspan="5">1</td><td rowspan="5">Kota Serang</td><td>Bahasa Sunda dialek Banten</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Sunda dialek Priangan</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Jawa dialek Banten</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Betawi</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Indonesia</td><td>Ya</td></tr>
+                  <tr><td rowspan="5">2</td><td rowspan="5">Kota Cilegon</td><td>Bahasa Sunda dialek Banten</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Sunda dialek Priangan</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Jawa dialek Banten</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Betawi</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Indonesia</td><td>Ya</td></tr>
+                  <tr><td rowspan="5">3</td><td rowspan="5">Kota Tangerang</td><td>Bahasa Sunda dialek Banten</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Sunda dialek Priangan</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Jawa dialek Banten</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Betawi</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Indonesia</td><td>Ya</td></tr>
+                  <tr><td rowspan="5">4</td><td rowspan="5">Kota Tangerang Selatan</td><td>Bahasa Sunda dialek Banten</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Sunda dialek Priangan</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Jawa dialek Banten</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Betawi</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Indonesia</td><td>Ya</td></tr>
+                  <tr><td rowspan="5">5</td><td rowspan="5">Kabupaten Serang</td><td>Bahasa Sunda dialek Banten</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Sunda dialek Priangan</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Jawa dialek Banten</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Betawi</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Indonesia</td><td>Ya</td></tr>
+                  <tr><td rowspan="5">6</td><td rowspan="5">Kabupaten Tangerang</td><td>Bahasa Sunda dialek Banten</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Sunda dialek Priangan</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Jawa dialek Banten</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Betawi</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Indonesia</td><td>Ya</td></tr>
+                  <tr><td rowspan="5">7</td><td rowspan="5">Kabupaten Pandeglang</td><td>Bahasa Sunda dialek Banten</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Sunda dialek Priangan</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Jawa dialek Banten</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Betawi</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Indonesia</td><td>Ya</td></tr>
+                  <tr><td rowspan="3">8</td><td rowspan="3">Kabupaten Lebak</td><td>Bahasa Sunda dialek Banten</td><td>Ya</td></tr>
+                  <tr><td>Bahasa Sunda dialek Priangan</td><td>Kurang</td></tr>
+                  <tr><td>Bahasa Indonesia</td><td>Ya</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== 4.9 Permainan Rakyat ===== -->
+            <div class="bab-sub">4.9 Permainan Rakyat</div>
+            <p>
+              Permainan tradisional atau permainan rakyat sebagai bagian dari folklore dapat dijumpai pada hampir seluruh wilayah Indonesia dengan berbagai coraknya, termasuk terkait dengan ekologi yang melatar-belakangi suatu wilayah. Misalnya pada wilayah pantai, jenis permainan dan material yang digunakan terkait dengan potensi yang ada di wilayah tersebut. Demikian hanya untuk permainan di wilayah pertanian dan di sekitar hutan mempunyai jenis dan material yang berasal dari berbagai jenis tanaman yang ada di daerah tersebut.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Kabupaten/Kota</th><th>Nama Permainan Rakyat</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>Kota Serang</td><td>-</td></tr>
+                  <tr><td>2</td><td>Kota Cilegon</td><td>Jingglong (Engklek), Gobag, Bebentengan, Jangkungan/Egrang</td></tr>
+                  <tr><td>3</td><td>Kota Tangerang</td><td>-</td></tr>
+                  <tr><td>4</td><td>Kota Tangerang Selatan</td><td>-</td></tr>
+                  <tr><td>5</td><td>Kab. Serang</td><td>Egrang</td></tr>
+                  <tr><td>6</td><td>Kab. Tangerang</td><td>-</td></tr>
+                  <tr><td>7</td><td>Kab. Pandeglang</td><td>Panggai, Bekel, Cletokan, Congklak, Engkle, Oray-Orayan, Luncat Tali, Gatrik, Gundu, Boi-boian, Dampu, Jajangkungan, Bebentengan, Susumputan, Simseu, Sul</td></tr>
+                  <tr><td>8</td><td>Kab. Lebak</td><td>Dampu, Jajangkungan, Bebentengan, Susumputan, Agot</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== 4.10 Olahraga Tradisional ===== -->
+            <div class="bab-sub">4.10 Olahraga Tradisional</div>
+            <p>
+              Olahraga tradisional yang berasal dari permainan rakyat sebagai aset budaya bangsa perlu dilestarikan dan dikembangkan di seluruh Indonesia melalui tenaga-tenaga penggerak yang terampil. Olahraga tradisional adalah salah satu unsur kebudayaan nasional yang masih hidup dan berkembang di setiap daerah-daerah di Indonesia.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>No</th><th>Kabupaten/Kota</th><th>Nama Olahraga Tradisional</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>Kab. Lebak</td><td>-</td></tr>
+                  <tr><td>2</td><td>Kab. Pandeglang</td><td>Jajangkungan, Gatrik, Bebentengan, Gobag</td></tr>
+                  <tr><td>3</td><td>Kab. Serang</td><td>Egrang</td></tr>
+                  <tr><td>4</td><td>Kab. Tangerang</td><td>-</td></tr>
+                  <tr><td>5</td><td>Kota Tangerang</td><td>-</td></tr>
+                  <tr><td>6</td><td>Kota Serang</td><td>Gobag, Terampah Panjang, Egrang</td></tr>
+                  <tr><td>7</td><td>Kota Cilegon</td><td>-</td></tr>
+                  <tr><td>8</td><td>Kota Tangerang Selatan</td><td>-</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+
+            <!-- ===== 4.11 Cagar Budaya ===== -->
+            <div class="bab-sub">4.11 Cagar Budaya</div>
+            <p>
+              Secara umum, upaya pelestarian Cagar Budaya di Provinsi Banten menunjukkan perkembangan yang dinamis dan berkelanjutan dalam lima tahun terakhir. Langkah-langkah pelindungan, pengembangan, dan pemanfaatan Cagar Budaya di Provinsi Banten semakin meningkat dan memperlihatkan tren positif. Hal ini dapat dilihat dari indikator bertambahnya jumlah Objek Cagar Budaya (CB) yang ditetapkan, dan Objek Diduga Cagar Budaya (ODCB) yang terdata di setiap kabupaten/kota setiap tahunnya, yang juga disertai dengan upaya pencarian, penyelamatan, dan pengkajian terhadap objek-objek baru yang potensial.
+            </p>
+            <p>
+              Sebaran Objek Cagar Budaya (CB), Objek Diduga Cagar Budaya (ODCB), serta juga objek-objek yang belum didaftarkan atau ditetapkan namun memiliki Potensi Sejarah yang telah terdokumentasi, hingga saat ini setidaknya mencapai total 382 buah, dan paling banyak ditemukan di Kabupaten Lebak (86 buah) serta Kota Serang (85 buah), sementara yang paling sedikit berada di Kabupaten Tangerang (17 buah) dan Kota Cilegon (10 buah). Objek-objek tersebut didominasi oleh kategori Bangunan dan Situs dengan beragam fungsi, termasuk tempat ibadah, makam, situs sejarah, fasilitas sosial, ekonomi, fasilitas pemerintahan, hunian, infrastruktur transportasi, teknologi, lembaga pendidikan, fasilitas kesehatan, pusat kegiatan seni dan budaya, destinasi pariwisata, bangunan militer, serta subjek penelitian peninggalan arkeologis.
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th rowspan="2">No</th><th rowspan="2">Kabupaten/Kota</th><th colspan="2">Benda</th><th colspan="2">Struktur</th><th colspan="2">Bangunan</th><th colspan="2">Situs</th><th colspan="2">Kawasan</th><th rowspan="2">Jumlah</th><th rowspan="2">Total</th></tr>
+                  <tr><th>CB</th><th>ODCB</th><th>CB</th><th>ODCB</th><th>CB</th><th>ODCB</th><th>CB</th><th>ODCB</th><th>CB</th><th>ODCB</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Kabupaten Lebak</td><td>0</td><td>0</td><td>3</td><td>17</td><td>39</td><td>12</td><td>12</td><td>3</td><td>0</td><td>0</td><td>54</td><td>86</td></tr>
+                  <tr><td>2</td><td>Kabupaten Pandeglang</td><td>0</td><td>0</td><td>1</td><td>8</td><td>4</td><td>24</td><td>6</td><td>15</td><td>0</td><td>0</td><td>11</td><td>58</td></tr>
+                  <tr><td>3</td><td>Kabupaten Serang</td><td>1</td><td>0</td><td>5</td><td>2</td><td>6</td><td>5</td><td>13</td><td>4</td><td>0</td><td>0</td><td>25</td><td>36</td></tr>
+                  <tr><td>4</td><td>Kabupaten Tangerang</td><td>0</td><td>1</td><td>0</td><td>5</td><td>0</td><td>9</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td><td>17</td></tr>
+                  <tr><td>5</td><td>Kota Tangerang</td><td>0</td><td>1</td><td>8</td><td>8</td><td>6</td><td>18</td><td>4</td><td>10</td><td>0</td><td>2</td><td>18</td><td>57</td></tr>
+                  <tr><td>6</td><td>Kota Serang</td><td>0</td><td>3</td><td>10</td><td>8</td><td>20</td><td>36</td><td>7</td><td>0</td><td>1</td><td>0</td><td>38</td><td>85</td></tr>
+                  <tr><td>7</td><td>Kota Cilegon</td><td>0</td><td>0</td><td>1</td><td>0</td><td>3</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>10</td></tr>
+                  <tr><td>8</td><td>Kota Tangerang Selatan</td><td>0</td><td>2</td><td>2</td><td>0</td><td>0</td><td>8</td><td>2</td><td>1</td><td>0</td><td>0</td><td>4</td><td>33</td></tr>
+                  <tr><td><strong>Jumlah</strong></td><td></td><td><strong>1</strong></td><td><strong>4</strong></td><td><strong>28</strong></td><td><strong>44</strong></td><td><strong>69</strong></td><td><strong>101</strong></td><td><strong>42</strong></td><td><strong>25</strong></td><td><strong>1</strong></td><td><strong>2</strong></td><td><strong>193</strong></td><td><strong>382</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">Sumber: PPKD Banten 2025</div>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               BAB 5
+               ============================================================ -->
+          <div class="bab" id="bab5">
+            <div class="bab-header">
+              <span class="bab-number">BAB 5</span>
+              <span class="bab-title">Data Sumber Daya Manusia, Kebudayaan, dan Lembaga Kebudayaan</span>
+            </div>
+
+            <p>
+              Salah satu pilar pemajuan kebudayaan adalah ketersediaan Sumber Daya Manusia (SDM) kebudayaan dan lembaga kebudayaan. Eksistensi dari Objek Pemajuan Kebudayaan (OPK), sebagai kekayaan bangsa Indonesia akan tetap lestari, terjaga, dan berkembang manakala dimensi SDM dan lembaga kebudayaan di setiap daerah cukup tersedia, baik dari aspek pembuat, pelaku, pemelihara, maupun pengguna budaya itu sendiri. Trend semakin lunturnya nilai budaya dan kurang terapresiasinya ekspresi budaya bangsa, seperti halnya di Provinsi Banten, diakibatkan karena semakin berkurang dan lemahnya SDM dan lembaga budaya yang ada di setiap daerah. Gambaran SDM dan lembaga kebudayaan setiap OPK di Provinsi Banten dideskripsikan secara singkat sebagai berikut:
+            </p>
+
+            <div class="bab-sub">5.1 Tradisi Lisan</div>
+            <p>
+              Secara faktual, orang-orang muda yang dapat menghafal tradisi lisan semakin jarang dan tradisi ini terancam punah kalau tidak segera dilakukan usaha perekaman. Namun demikian, usaha seperti ini jelas bukanlah sekadar ikhtiar melestarikan suatu warisan yang segera hilang, melainkan memberikan berbagai dimensi baru dalam pengertian dan apresiasi tentang apa yang dikenal sebagai kebudayaan tradisional. Bersamaan dengan itu, sudah tentu para penuturnya pun semakin berkurang atau langka. Kondisi ini pun terlihat terhadap ketersediaan SDM dan lembaga OPK Tradisi Lisan di Provinsi Banten mendukung untuk tradisi lisan di Provinsi Banten terdapat 40% dari pemerintah dan 60% dari masyarakat.
+            </p>
+
+            <div class="bab-sub">5.2 Manuskrip</div>
+            <p>
+              Berdasarkan hasil survei dan pendalaman melalui studi dokumen PPKD tingkat kabupaten/kota, interview, dan FGD terkait OPK manuskrip yang ada di Provinsi Banten, secara kelembagaan masih cukup tersedia, namun terindikasi lemah dalam aspek SDM. Kelemahan SDM dalam konteks OPK Manuskrip yang ada di Provinsi Banten terutama pada aspek SDM pembaca dan penerjemah ahli terhadap beberapa naskah-naskah kuno yang ada. Demikian pula dari jumlah pengakses dan lembaga manuskrip. Adapun persentase sarana dan prasarana yang mendukung OPK manuskrip yang ada di Provinsi Banten sebanyak 50% sarana pemerintah dan 40% sarana masyarakat lembaga lainnya 10%.
+            </p>
+
+            <div class="bab-sub">5.3 Adat Istiadat</div>
+            <p>
+              Berkaitan dengan SDM dan lembaga beberapa objek jenis adat istiadat seperti; adat istiadat tentang tata perilaku masyarakat, adat istiadat terkait perilaku terhadap agama, perkawinan, gotong-royong, dan sebagainya. Terdapat 99% masih sering dilakukan oleh Suku Baduy dan dapat ditemui di Kabupaten Lebak yang ada di Provinsi Banten. Kelemahan SDM dalam konteks OPK adat istiadat yang ada di Provinsi Banten terutama pada aspek penguatan pelaku adat. Namun demikian, dengan aktifnya penguatan lembaga dan dewan adat di Provinsi Banten saat ini sangat prospektif dalam pengembangan SDM adat. Demikian pula, dari aspek kelembagaan. Dari data borang dan APIK PPKD kabupaten/kota mengenai persentase sarana dan prasarana yang mendukung OPK adat istiadat 78% sarana masyarakat dan 22% sarana pemerintah. Tidak dapat dipungkiri selain lemahnya SDM, kurangnya sarana dan prasarana pemerintah ini juga menjadi salah satu faktor pemicu beberapa adat istiadat yang ada di Banten ini sudah mulai jarang dilakukan.
+            </p>
+
+            <div class="bab-sub">5.4 Ritus</div>
+            <p>
+              Ritus sebagai salah satu objek kebudayaan berupa tata cara pelaksanaan upacara atau kegiatan yang didasarkan pada nilai tertentu oleh kelompok masyarakat, seperti halnya masyarakat Banten. Sesungguhnya, masyarakat Banten memiliki berbagai banyak perayaan yang diwujudkan dalam bentuk upacara atau ritual, dan masyarakat Banten masih banyak melakukan, sehingga dari aspek SDM ritual sesungguhnya masih cukup tersedia. Dari jenis-jenis upacara atau ritual dan pesta rakyat berhasil diidentifikasi dalam borang dan hasil survei di masyarakat terdapat 62% masih sering dilakukan, 35% sudah jarang dilakukan dan 3% sudah tidak ada atau punah. Sedangkan dari frekuensi sarana dan prasarana yang mendukung ritus di Banten ini 60% merupakan sarana masyarakat dan 40% sarana pemerintah.
+            </p>
+
+            <div class="bab-sub">5.5 Pengetahuan Tradisional</div>
+            <p>
+              Seperti yang sudah dijelaskan pada bagian di atas bahwa pengetahuan tradisional di Banten eksistensinya masih tetap terjaga disebabkan karena pengetahuan tersebut masih relevan dari segi fungsi. Dari grafik yang diambil dari APIK PPKD tingkat kabupaten/kota, 80% masih sering atau eksis, 17% sudah jarang dan 3% punah. Jarangnya bahkan punahnya pengetahuan tradisional disebabkan karena bahan baku yang sudah mulai berkurang, tidak relevan untuk beberapa masyarakat, orang yang mengetahui sudah semakin berkurang dan terjadinya perubahan kondisi lingkungan serta sudah mulai tergerus oleh perubahan zaman.
+            </p>
+            <p>
+              Untuk pelaku pemanfaat pengetahuan tradisional pada berbagai jenis pengetahuan tradisional sejauh ini masih tersebar luas di kabupaten/kota yang ada di Banten. Aspek yang sangat potensial terutama pada jenis objek makanan (kuliner) tradisional yang saat ini masih sangat eksis dan bahkan menjadi icon. Demikian pula pada aspek pengetahuan tradisional lainnya, seperti busana tradisional baju adat dan baju upacara perkawinan, upacara adat, saat masih sangat eksis. Hal ini tidak terlepas tingginya komitmen pemerintah Provinsi Banten dalam menggiatkan tema pembangunan berbasis budaya.
+            </p>
+
+            <div class="bab-sub">5.6 Teknologi Tradisional</div>
+            <p>
+              Pelaku pemanfaatan teknologi tradisional oleh masyarakat Banten dan juga masyarakat pendatang relatif masih tinggi persentasenya, hal ini disebabkan karena dewasa ini beberapa teknologi tradisional masih relevan secara fungsional dalam mendukung daya survive masyarakat. Namun demikian tetap saja teknologi tradisional sulit menghindari terjadinya perubahan, hal ini karena teknologi tersebut ada yang sudah tidak relevan. Untuk teknologi yang masih bertahan dapat digunakan karena selain ramah lingkungan juga dapat digunakan sebagai alternatif ketika teknologi modern mengalami masalah atau biaya operasionalnya cukup tinggi. Sementara itu, untuk teknologi arsitektur dan senjata tradisional relatif lebih sulit mengalami perkembangan pemajuan seiring perubahan dinamika sosial masyarakat ke arah masyarakat yang lebih modern.
+            </p>
+            <p>
+              Khusus untuk arsitektur, bentuk rumah Betawi sudah jarang digunakan oleh orang Betawi, mereka lebih banyak menggunakan model arsitektur modern dengan bahan baku terbuat dari batu, semen, dan pasir. Untuk teknologi tradisional senjata bahkan tidak ada lagi perkembangan. Hal itu disebabkan selain karena fungsi sakral dari senjata yang diperoleh melalui pewarisan, juga karena kondisi sosial masyarakat yang relatif kondusif. Walaupun senjata yang menjadi warisan masih tersimpan rapi di rumah seperti senjata mandau.
+            </p>
+            <p>
+              Penggunaan teknologi tradisional senjata umumnya pada saat upacara-upacara ritual atau dalam proses pengobatan. Lebih jauh, menurut informasi perhatian generasi sekarang mulai berkurang terhadap senjata tradisional selain karena terbatas jumlahnya, juga karena penggunaan yang diatur oleh undang-undang, dan yang paling determinan adalah karena orientasi kehidupan masyarakat Banten mulai bergeser membekali diri dengan pendidikan yang lebih formal. Untuk pakaian tradisional masih sering kita jumpai pada saat perayaan hari-hari besar daerah, upacara adat, proses adat pernikahan, dan penyambutan tamu. Oleh masyarakat setempat eksistensi pakaian adat masih terjaga sampai saat ini.
+            </p>
+            <p>
+              Eksistensi teknologi tradisional masih sangat populer keberadaannya juga didukung oleh kapasitas sejumlah masyarakat adat Baduy, dan ataupun masyarakat dari suku bangsa lainnya yang telah menginternalisasi pengetahuan pembuatan dan pemeliharaan teknologi tradisional yang digunakan di Banten. Teknologi tradisional yang paling tinggi representasinya ada pada pembuat, pemelihara. Pengguna teknologi ini umumnya mengharuskan penggunanya memiliki kapasitas membuat dan memelihara teknologi tersebut, berbeda halnya dengan teknologi arsitektur, sumber daya manusia yang dapat membuat dan memelihara jumlahnya sangat kecil. Terkait hal itu pemelihara dan pembuat teknologi tersebut membutuhkan perhatian khusus terkait pewarisan pengetahuan tradisional pembuatan dan pemeliharaannya.
+            </p>
+
+            <div class="bab-sub">5.7 Seni</div>
+            <p>
+              Dari keseluruhan OPK yang terdata, objek seni merupakan objek yang paling terbanyak terekam dalam borang tahun 2018. Objek seni dalam konteks SDM dan kelembagaan di Provinsi Banten dalam beberapa tahun terakhir ini cukup baik, oleh karena adanya proaktif dan fasilitasi dari tokoh adat dan tokoh masyarakat di kabupaten/kota yang ada di Banten. Dengan demikian, dari data borang tahun 2018 seni tari adalah seni yang paling mendominasi di Banten.
+            </p>
+
+            <div class="bab-sub">5.8 Bahasa</div>
+            <p>
+              Penduduk asli yang hidup di Provinsi Banten berbicara menggunakan dialek yang merupakan turunan dari bahasa Sunda. Namun demikian, di Wilayah Banten Selatan seperti Lebak dan Pandeglang menggunakan Bahasa Sunda Banten, Sunda Priangan, dan Bahasa Indonesia, sementara di Serang dan Cilegon, bahasa Jawa Bantenlah yang digunakan. Adapun di Tangerang mayoritas berbahasa Sunda Banten, bercampur dengan Bahasa Betawi/Melayu. Adapun perhitungan Grafik penggunaan bahasa di berbagai Kab/Kota: Sunda 40%, Jawa Banten 20%, Betawi/Melayu 30%, Indonesia 10%.
+            </p>
+
+            <div class="bab-sub">5.9 Permainan Rakyat</div>
+            <p>
+              Berdasarkan persentase diagram, digambarkan jenis permainan yang masih sering dimainkan oleh anak-anak atau masyarakat Banten sekitar 60% masih sering dimainkan, yang sudah jarang sekitar 35% dan yang sudah punah sekitar 5%. Data ini menunjukkan kalau dari SDM objek permainan rakyat pada prinsipnya cukup tersedia, namun sudah mulai terjadi pergeseran, di mana sudah ada kecenderungan beberapa jenis permainan sudah mengalami kepunahan.
+            </p>
+
+            <div class="bab-sub">5.10 Olahraga Tradisional</div>
+            <p>
+              Memerhatikan grafik dan diagram OPK Olahraga Tradisional, tergambar olahraga tradisional yang hingga saat ini masih banyak yang dipertahankan sekitar; sekitar 60% masih sering dan 40% sudah jarang dimainkan saat ini. Dari jenis-jenis objek olahraga tradisional tersebut juga memiliki lembaga yang bersifat informal dalam mempertahankan olahraga tradisional Banten, di antaranya Dinas terkait bidang olahraga, dan club-club olahraga yang ada pada masyarakat.
+            </p>
+
+            <div class="bab-sub">5.11 Cagar Budaya</div>
+            <p>
+              Eksistensi SDM dan lembaga cagar budaya yang ada di Provinsi Banten sesungguhnya masih sangat terbatas dan sangat urgen penguatan SDM dan kelembagaan dalam rangka memelihara dan melestarikan cagar budaya yang ada sebagai khazanah kekayaan daerah Banten. Sebaran Cagar Budaya: Kab. Lebak (63 objek), Kota Serang (43 objek), Kab. Serang (16 objek), Kab. Pandeglang (28 objek), Kota Cilegon (4 objek), Kab. Tangerang (4 objek), Kota Tang-Sel (3 objek), Kota Tangerang (15 objek).
+            </p>
+          </div>
+
+          <!-- ============================================================
+               BAB 6
+               ============================================================ -->
+          <div class="bab" id="bab6">
+            <div class="bab-header">
+              <span class="bab-number">BAB 6</span>
+              <span class="bab-title">Data Sarana dan Prasarana Kebudayaan</span>
+            </div>
+
+            <p>
+              Berdasarkan Undang-Undang Nomor 23 Tahun 2000, Provinsi Banten secara resmi ditetapkan sebagai provinsi yang sebelumnya merupakan bagian dari Provinsi Jawa Barat. Provinsi Banten memiliki delapan wilayah administratif yang terdiri dari empat kabupaten, yaitu Kabupaten Serang, Kabupaten Pandeglang, Kabupaten Lebak, dan Kabupaten Tangerang, serta empat kota, yaitu Kota Cilegon, Kota Serang, Kota Tangerang, dan Kota Tangerang Selatan. Dengan luas wilayah mencapai 9.663 km², Provinsi Banten memiliki kondisi geografis dan demografis yang beragam. Keanekaragaman ini turut membentuk karakter masyarakat Banten yang heterogen, baik dari segi budaya, tradisi, maupun praktik sosial. Warisan budaya yang kaya dan unik ini menjadi identitas penting bagi masyarakat Banten, sehingga pelestarian dan pengembangan budaya bukan hanya menjadi kebutuhan sosial, tetapi juga menjadi fondasi pembentukan identitas daerah yang kokoh dan berkelanjutan.
+            </p>
+            <p>
+              Pemerintah Provinsi Banten menyadari pentingnya peran pelestarian budaya sebagai bagian integral dari pembangunan sumber daya manusia dan pembangunan wilayah secara menyeluruh. Upaya ini dilakukan melalui penguatan lembaga, sarana, dan prasarana kebudayaan, serta pemanfaatan kearifan lokal sebagai basis program pembangunan. Berbagai regulasi dan kebijakan telah diterapkan di setiap kabupaten dan kota untuk mendorong pemajuan kebudayaan, menunjukkan kesungguhan pemerintah dalam mempertahankan eksistensi budaya. Meskipun demikian, hasil survei pendataan menunjukkan bahwa ketersediaan sarana dan prasarana kebudayaan, baik yang disediakan pemerintah maupun masyarakat, masih tergolong terbatas. Hal ini menuntut adanya kolaborasi yang lebih intensif antara pemerintah daerah, masyarakat, dan dukungan pemerintah pusat untuk mempercepat pengembangan dan pelestarian budaya secara optimal.
+            </p>
+            <p>
+              Dalam praktiknya, penyediaan sarana dan prasarana kebudayaan di Provinsi Banten diwujudkan melalui pengadaan ruang, fasilitas, dan tempat untuk penyelenggaraan berbagai event, promosi, dan pertunjukan budaya di seluruh wilayah provinsi. Data yang terekam dalam sistem aplikasi APIK memberikan gambaran konkret mengenai kondisi sarana dan prasarana setiap Organisasi Pelaksana Kebudayaan (OPK). Keberadaan fasilitas ini tidak hanya memfasilitasi pelestarian budaya, tetapi juga membuka peluang bagi masyarakat untuk berpartisipasi aktif dalam menjaga, mengembangkan, dan menyebarkan kebudayaan Banten secara luas dan menyeluruh. Dengan demikian, budaya Banten dapat dijadikan identitas yang kuat sekaligus pondasi moral dan sosial bagi generasi penerus, sekaligus memperkuat kohesi sosial dan kapasitas kreatif masyarakat di tengah dinamika pembangunan yang terus berlangsung.
+            </p>
+
+            <div class="bab-sub">6.1 Tradisi Lisan</div>
+            <div class="highlight-box">
+              <p><strong>Sarana Pemerintah : 40%</strong> — <strong>Sarana Masyarakat : 60%</strong></p>
+              <p><strong>Catatan :</strong> Masih rendah dan perlu didorong dan diberikan penguatan dan pengingatan.</p>
+            </div>
+
+            <div class="bab-sub">6.2 Manuskrip</div>
+            <div class="highlight-box">
+              <p><strong>Sarana Pemerintah : 50%</strong> — <strong>Sarana Masyarakat : 50%</strong></p>
+              <p><strong>Catatan :</strong> Dorongan Pemerintah dan Masyarakat Melalui Swadaya berjalan Baik tetapi perlu dijalankan Lebih optimal untuk penguatan Pemajuan Kebudayaan Banten.</p>
+            </div>
+
+            <div class="bab-sub">6.3 Adat Istiadat</div>
+            <div class="highlight-box">
+              <p><strong>Sarana Pemerintah : 40%</strong> — <strong>Sarana Masyarakat : 60%</strong></p>
+              <p><strong>Catatan :</strong> Masih rendah dan perlu didorong dan diberikan penguatan dan pengingatan.</p>
+            </div>
+
+            <div class="bab-sub">6.4 Ritus</div>
+            <div class="highlight-box">
+              <p><strong>Sarana Pemerintah : 40%</strong> — <strong>Sarana Masyarakat : 60%</strong></p>
+              <p><strong>Catatan :</strong> Masih rendah dan Perlu di dorong dan diberikan penguatan dan Pengingatan.</p>
+            </div>
+
+            <div class="bab-sub">6.5 Pengetahuan Tradisional</div>
+            <div class="highlight-box">
+              <p><strong>Sarana Pemerintah : 45%</strong> — <strong>Sarana Masyarakat : 55%</strong></p>
+              <p><strong>Catatan :</strong> Masih rendah dan perlu didorong dan diberikan penguatan dan pengingatan.</p>
+            </div>
+
+            <div class="bab-sub">6.6 Teknologi Tradisional</div>
+            <div class="highlight-box">
+              <p><strong>Sarana Pemerintah : 50%</strong> — <strong>Sarana Masyarakat : 50%</strong></p>
+              <p><strong>Catatan :</strong> Masih rendah dan perlu didorong dan diberikan penguatan dan pengingatan.</p>
+            </div>
+
+            <div class="bab-sub">6.7 Seni</div>
+            <div class="highlight-box">
+              <p><strong>Sarana Pemerintah : 70%</strong> — <strong>Sarana Masyarakat : 30%</strong></p>
+              <p><strong>Catatan :</strong> Masih rendah dan Perlu di dorong dan diberikan penguatan dan Pengingatan.</p>
+            </div>
+
+            <div class="bab-sub">6.8 Bahasa</div>
+            <div class="highlight-box">
+              <p><strong>Sarana Pemerintah : 40%</strong> — <strong>Sarana Masyarakat : 60%</strong></p>
+              <p><strong>Catatan :</strong> Masih rendah dan perlu didorong dan diberikan penguatan dan pengingatan.</p>
+            </div>
+
+            <div class="bab-sub">6.9 Permainan Rakyat</div>
+            <div class="highlight-box">
+              <p><strong>Sarana Pemerintah : 40%</strong> — <strong>Sarana Masyarakat : 60%</strong></p>
+              <p><strong>Catatan :</strong> Masih rendah dan perlu didorong dan diberikan penguatan dan pengingatan.</p>
+            </div>
+
+            <div class="bab-sub">6.10 Olahraga Tradisional</div>
+            <div class="highlight-box">
+              <p><strong>Sarana Pemerintah : 70%</strong> — <strong>Sarana Masyarakat : 30%</strong></p>
+              <p><strong>Catatan :</strong> Masih rendah dan Perlu di dorong dan diberikan penguatan dan Pengingatan.</p>
+            </div>
+
+            <p>
+              Berdasarkan diagraman OPK, yang didapat dari Survei maka dapat dilihat adanya komitmen pemerintah Daerah dan pemerintah Provinsi Banten serta Masyarakat, memiliki tujuan yang sama untuk pemajuan Kebudayaan Banten. Ini dapat dilihat pada peran masyarakat untuk mengambil peran serta dalam pelestarian seluruh objek kebudayaan. Dukungan juga terlihat pada lembaga pemerintah pada level eksekutif dan legislatif untuk menjaga dan melestarikan kebudayaan Banten secara terintegrasi dan menyeluruh. Dimana penegasan otentik kepemilikan serta bantuan swadaya atau bantuan objek budaya dari masyarakat dapat teridentifikasi serta dilegalisasi secara benar. Sementara pada pemerintah eksekutif untuk terus membangun sarana dan prasarana publik dalam pemajuan kebudayaan Banten.
+            </p>
+            <p>
+              Akan tetapi pemerintah juga melihat penyediaan anggaran di wilayah provinsi Banten masih melihat pada skala prioritas sehingga pengembangan sarana dan prasarana masih belum berjalan optimal. Dengan anggaran daerah yang terbatas, pemerintah melakukan kerjasama aktif dengan masyarakat untuk membuat swadaya bersama dalam pemajuan kebudayaan. Sejauh ini pemerintah provinsi fokus pada pembangunan untuk mengejar ketertinggalan di seluruh wilayah Provinsi Banten sehingga pembangunan dapat berjalan merata dalam pembangunan. Dengan kondisi tersebut perlu adanya peran aktif dari pemerintah daerah, provinsi serta masyarakat untuk terus melakukan perbaikan pada sarana dan prasarana dan menjadikan budaya menjadi program prioritas pemerintah Banten.
+            </p>
+            <p>
+              Pada gambaran grafik OPK pada umumnya difasilitasi oleh pemerintah dan masyarakat. Dari grafik tersebut mengidentifikasikan pemerintah kurang memperhatikan aspek pemajuan dan pemeliharaan objek kebudayaan Provinsi Banten. Grafik pada Manuskrip menunjukkan sarana dan prasarana pendukung OPK ini difasilitasi oleh masyarakat dengan persentasi sama dengan pemerintah ini didukung dengan adanya swadaya masyarakat untuk menghibahkan objek budaya pada pemerintah. Sedangkan pada Tradisi lisan berbanding terbalik dengan masyarakat yang lebih dominan dalam pemajuan Kebudayaan. Ini terjadi dikarenakan Pemerintah masih belum mampu Optimal mendorong peningkatan kualitas sumber daya manusia dan minimnya anggaran sehingga masyarakat yang memberikan kontribusi lebih untuk menjaga tradisi lisan itu sendiri.
+            </p>
+            <p>
+              Maka Demikian Provinsi Banten dan delapan Kabupaten/kota harus menjadikan pemajuan kebudayaan menjadi masalah prioritas sehingga peningkatan kualitas sumber daya manusia dapat diwujudkan melalui dasar budaya Banten itu sendiri. Dengan mental masyarakat Banten yang berbudaya diharapkan masyarakat memiliki paradigma optimis, survive untuk menghadapi masa depan yang lebih baik. Sementara pemerintah melakukan perbaikan anggaran kebudayaan Banten untuk mendorong sarana dan prasarana Kebudayaan Banten demi terciptanya Pemajuan kebudayaan Banten yang berlandaskan Iman dan Takwa.
+            </p>
+          </div>
+
+          <!-- ============================================================
+               BAB 7
+               ============================================================ -->
+          <div class="bab" id="bab7">
+            <div class="bab-header">
+              <span class="bab-number">BAB 7</span>
+              <span class="bab-title">Permasalahan dan Rekomendasi</span>
+            </div>
+
+            <p>
+              Dilihat dari berbagai sisi, kesepuluh Objek Pemajuan Kebudayaan (OPK), yakni manuskrip, tradisi lisan, adat istiadat, ritus, pengetahuan tradisional, teknologi tradisional, seni, bahasa, permainan rakyat, dan olahraga tradisional, serta cagar budaya, pada dasarnya menghadapi permasalahan yang relatif serupa dan saling berkaitan satu sama lain. Permasalahan pertama berkaitan dengan ancaman terhadap eksistensi OPK dan cagar budaya itu sendiri, baik akibat perubahan sosial, arus modernisasi, maupun minimnya perhatian lintas generasi. Permasalahan kedua berhubungan dengan keterbatasan sumber daya manusia, baik dari segi jumlah, kapasitas, maupun regenerasi pelaku budaya. Permasalahan ketiga berkaitan dengan penurunan kualitas dan kuantitas masyarakat pendukung yang selama ini menjadi faktor utama keberlangsungan kesepuluh OPK beserta cagar budaya. Sementara itu, permasalahan keempat menyangkut keterbatasan sarana dan prasarana pendukung yang memadai untuk menunjang upaya pelestarian dan pengembangan kesepuluh OPK beserta cagar budaya yang ada di Provinsi Banten.
+            </p>
+            <p>
+              Keempat permasalahan tersebut pada dasarnya telah disadari, baik oleh masyarakat sebagai pemilik kebudayaan maupun oleh Pemerintah Provinsi Banten sebagai pemangku kebijakan. Atas dasar kesadaran tersebut, berbagai upaya telah dilakukan untuk memperbaiki kondisi yang ada, atau setidaknya menyelaraskan capaian yang diperoleh dengan sasaran yang diharapkan. Namun demikian, dalam implementasinya masih kerap muncul persoalan-persoalan klasik, terutama terkait dengan keterbatasan anggaran, kelembagaan, serta koordinasi antar pemangku kepentingan. Keterbatasan tersebut, baik yang dimiliki oleh pemerintah daerah maupun masyarakat, pada akhirnya menjadi salah satu faktor penghambat dalam mewujudkan upaya konkret untuk menjawab permasalahan yang dihadapi kesepuluh OPK dan cagar budaya.
+            </p>
+            <p>
+              Masyarakat sebagai pemilik sekaligus ujung tombak pelestarian kebudayaan, secara aktif pada dasarnya terus berupaya mempertahankan eksistensi kesepuluh OPK. Upaya tersebut dilakukan melalui berbagai komunitas budaya, baik yang secara langsung maupun tidak langsung bersinggungan dengan pengelolaan, pewarisan, dan pengembangan OPK. Selain itu, masyarakat juga berupaya melakukan proses regenerasi sumber daya manusia yang berperan sebagai pegiat budaya, meskipun masih dihadapkan pada keterbatasan dukungan fasilitas dan pendanaan. Di sisi lain, dengan segala keterbatasan yang dimilikinya, masyarakat berupaya menyediakan prasarana dan sarana penunjang bagi ruang berekspresi dan keberlanjutan kesepuluh OPK beserta cagar budaya. Sementara itu, Pemerintah Provinsi Banten juga menunjukkan peran aktif dalam memfasilitasi berbagai upaya pelestarian kebudayaan, antara lain melalui penyediaan, perbaikan, dan pembangunan sarana serta prasarana pendukung. Berbagai peran tersebut diharapkan dapat memperkuat sinergi antara pemerintah dan masyarakat dalam menjaga, melestarikan, serta mengembangkan eksistensi kesepuluh OPK dan cagar budaya secara berkelanjutan.
+            </p>
+
+            <div class="bab-sub">7.3 Rekomendasi</div>
+            <p>
+              Berbicara mengenai permasalahan yang dihadapi oleh kesepuluh Objek Pemajuan Kebudayaan (OPK), yakni manuskrip, tradisi lisan, adat istiadat, ritus, pengetahuan tradisional, teknologi tradisional, seni, bahasa, permainan rakyat, olahraga tradisional, serta cagar budaya, pada dasarnya tidak hanya membahas persoalan-persoalan yang bersifat spesifik dan sektoral. Lebih dari itu, pembahasan tersebut juga bermakna mengulas permasalahan yang bersifat umum dan struktural, yang secara kolektif dihadapi oleh seluruh OPK. Permasalahan umum yang dihadapi kesepuluh OPK dan cagar budaya pada esensinya bermuara pada dua aspek pokok, yaitu sumber daya manusia serta ketersediaan sarana dan prasarana pendukung. Dalam kaitannya dengan sumber daya manusia, permasalahan umum yang dihadapi kesepuluh OPK dan cagar budaya berfokus pada dua kondisi utama. Pertama, sangat terbatasnya jumlah pegiat, aktivis, maupun pelaku kebudayaan yang secara aktif terlibat dalam upaya pelestarian dan pengembangan OPK. Kedua, semakin menurunnya jumlah masyarakat yang berperan sebagai pendukung dan pewaris nilai-nilai budaya tersebut. Kondisi ini berdampak langsung pada keberlanjutan OPK, bahkan pada beberapa bidang situasinya tergolong kritis. Sebagai contoh, pada OPK manuskrip, sumber daya manusia yang memiliki kompetensi membaca, memahami, dan mengkaji naskah kuno jumlahnya sangat terbatas, bahkan dapat dihitung dengan jari.
+            </p>
+            <p>
+              Permasalahan berikutnya berkaitan dengan keterbatasan sarana dan prasarana yang mampu mendukung eksistensi kesepuluh OPK dan cagar budaya. Keterbatasan tersebut tidak hanya ditandai oleh belum optimalnya pemanfaatan sarana dan prasarana yang telah tersedia, tetapi juga oleh minimnya ketersediaan fasilitas yang sesuai dengan kebutuhan dan karakteristik masing-masing OPK. Hal ini terutama dirasakan pada OPK yang memerlukan ruang-ruang terbuka dan ruang ekspresi yang representatif, layak, serta berkelanjutan untuk mendukung proses pewarisan, pelestarian, dan pengembangannya.
+            </p>
+            <p>
+              Berangkat dari permasalahan umum tersebut, terdapat dua rekomendasi strategis yang layak diajukan sebagai prioritas kebijakan pembangunan kebudayaan dalam setiap kurun waktu pembangunan lima tahunan. Pertama, peningkatan jumlah pegiat, aktivis, dan pelaku OPK, baik secara kuantitatif maupun kualitatif. Peningkatan kuantitatif dapat dilakukan melalui proses regenerasi alamiah serta melalui berbagai program dan kegiatan kebudayaan yang terstruktur dan berkelanjutan. Sementara itu, peningkatan kualitas sumber daya manusia dapat ditempuh melalui penguatan pendidikan, baik pada jenjang sarjana maupun pascasarjana, yang didukung dengan penyediaan beasiswa khusus bagi para pegiat, aktivis, dan pelaku OPK serta cagar budaya oleh Pemerintah Provinsi Banten. Kedua, diperlukan adanya political will yang kuat dari Pemerintah Provinsi Banten untuk mengoptimalkan, menyediakan, dan mengembangkan sarana serta prasarana kebudayaan secara berkelanjutan sebagai fondasi utama pelestarian OPK.
+            </p>
+          </div>
+
+          <!-- ============================================================
+               BAB 8
+               ============================================================ -->
+          <div class="bab" id="bab8">
+            <div class="bab-header">
+              <span class="bab-number">BAB 8</span>
+              <span class="bab-title">Lampiran</span>
+            </div>
+
+            <p>
+              Lampiran dalam PPKD Provinsi Banten 2025 mencakup:
+            </p>
+            <ul>
+              <li><strong>Dokumentasi Kegiatan</strong> — foto-foto proses penyusunan PPKD, FGD, dan konsultasi publik.</li>
+              <li><strong>SK Tim Penyusun</strong> — Surat Keputusan Gubernur Banten tentang pembentukan Tim Penyusun PPKD.</li>
+              <li><strong>Lembar Pengesahan</strong> — tanda tangan dan pengesahan dokumen PPKD oleh Gubernur Banten.</li>
+            </ul>
+            <p style="margin-top:16px;font-style:italic;color:var(--slate-light);">
+              *Dokumentasi dan lampiran selengkapnya dapat diakses melalui arsip resmi Dinas Pendidikan dan Kebudayaan Provinsi Banten.
+            </p>
+          </div>
+
+          <!-- ============================================================
+               BOOK FOOTER
+               ============================================================ -->
+          <div class="book-footer">
+            <a href="index.html" class="btn"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+            <div class="btn-group">
+              <a href="buku.html" class="btn">Kembali ke Buku</a>
+              <a href="index.html#opk" class="btn btn-primary">Lihat 10 OPK <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo"><i class="fas fa-archway"></i></div>
+            <h3>Budaya Nusantara</h3>
+            <p>Dashboard data sarana dan prasarana kebudayaan Provinsi Banten. Dibangun sebagai referensi perencanaan dan pemajuan kebudayaan daerah.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigasi</h4>
+            <ul>
+              <li><a href="index.html#profil"><i class="fas fa-map-marked-alt"></i> Profil Banten</a></li>
+              <li><a href="index.html#opk"><i class="fas fa-th-large"></i> Indikator OPK</a></li>
+              <li><a href="index.html#sarana"><i class="fas fa-layer-group"></i> Sarana & Prasarana</a></li>
+              <li><a href="tugas_bidang_kebudayaan.html"><i class="fas fa-tasks"></i> Tugas Kebudayaan</a></li>
+              <li><a href="index.html#sumber"><i class="fas fa-book-open"></i> Sumber Data</a></li>
+              <li><a href="buku.html"><i class="fas fa-book"></i> Buku</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Kategori OPK</h4>
+            <ul>
+              <li><a href="tradisi_lisan.html"><i class="fas fa-microphone-alt"></i> Tradisi Lisan</a></li>
+              <li><a href="manuskrip.html"><i class="fas fa-scroll"></i> Manuskrip</a></li>
+              <li><a href="adat_istiadat.html"><i class="fas fa-hand-holding-heart"></i> Adat Istiadat</a></li>
+              <li><a href="ritus.html"><i class="fas fa-fire"></i> Ritus</a></li>
+              <li><a href="seni.html"><i class="fas fa-palette"></i> Seni</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Lebih Banyak</h4>
+            <ul>
+              <li><a href="pengetahuan_tradisional.html"><i class="fas fa-tree"></i> Pengetahuan Tradisional</a></li>
+              <li><a href="teknologi_tradisional.html"><i class="fas fa-cogs"></i> Teknologi Tradisional</a></li>
+              <li><a href="bahasa.html"><i class="fas fa-language"></i> Bahasa</a></li>
+              <li><a href="permainan_rakyat.html"><i class="fas fa-dice"></i> Permainan Rakyat</a></li>
+              <li><a href="olahraga_tradisional.html"><i class="fas fa-running"></i> Olahraga Tradisional</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Budaya Nusantara <span class="dot"></span> Provinsi Banten</span>
+          <span>Data: Sistem APIK <span class="dot"></span> PPKD Banten 2025</span>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /body-overlay -->
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Loader
+      const loader = document.getElementById('pageLoader');
+      setTimeout(function() {
+        loader.classList.add('hidden');
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 600);
+      }, 1500);
+
+      // AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50
+      });
+
+      // Navbar scroll
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', function() {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      }, { passive: true });
+
+      // Hamburger
+      const hamburger = document.getElementById('hamburger');
+      const drawer = document.getElementById('navDrawer');
+      const body = document.body;
+
+      if (hamburger && drawer) {
+        hamburger.addEventListener('click', function() {
+          const isOpen = hamburger.classList.toggle('open');
+          drawer.classList.toggle('open', isOpen);
+          body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        document.querySelectorAll('.drawer-link').forEach(function(link) {
+          link.addEventListener('click', function() {
+            hamburger.classList.remove('open');
+            drawer.classList.remove('open');
+            body.style.overflow = '';
+          });
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && drawer.classList.contains('open')) {
+            hamburger.classList.remove('open');
+            drawer.classList.remove('open');
+            body.style.overflow = '';
+          }
+        });
+      }
+
+      // Dropdown Sarana (click toggle)
+      document.querySelectorAll('.has-drop').forEach(function(item) {
+        const link = item.querySelector('a');
+        const dropdown = item.querySelector('.navbar-dropdown');
+
+        if (link && dropdown) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            document.querySelectorAll('.has-drop').forEach(function(other) {
+              if (other !== item) {
+                other.classList.remove('open');
+              }
+            });
+
+            item.classList.toggle('open');
+          });
+        }
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.has-drop')) {
+          document.querySelectorAll('.has-drop').forEach(function(item) {
+            item.classList.remove('open');
+          });
+        }
+      });
+
+      // Dropdown Lainnya
+      const btnMore = document.getElementById('btnMore');
+      const dropdownMore = document.getElementById('dropdownMore');
+
+      if (btnMore && dropdownMore) {
+        btnMore.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dropdownMore.classList.toggle('open');
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.dropdown-more')) {
+            dropdownMore.classList.remove('open');
+          }
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            dropdownMore.classList.remove('open');
+          }
+        });
+      }
+
+      // Ganti Background Header (Ctrl+Shift+U)
+      const bgInput = document.getElementById('bgInput');
+      const heroBg = document.querySelector('.page-header-custom');
+
+      if (bgInput && heroBg) {
+        document.addEventListener('keydown', function(e) {
+          if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'U') {
+            e.preventDefault();
+            bgInput.click();
+          }
+        });
+
+        bgInput.addEventListener('change', function(e) {
+          const file = e.target.files[0];
+          if (!file) return;
+          const validTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+          if (!validTypes.includes(file.type)) {
+            alert('Mohon upload file gambar (JPG, PNG, WEBP, atau GIF)');
+            this.value = '';
+            return;
+          }
+          if (file.size > 10 * 1024 * 1024) {
+            alert('Ukuran file terlalu besar (maksimal 10MB)');
+            this.value = '';
+            return;
+          }
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            heroBg.style.transition = 'background-image 0.6s ease';
+            heroBg.style.backgroundImage = 'url(' + e.target.result + ')';
+            try {
+              localStorage.setItem('ppkdBackground', e.target.result);
+            } catch (err) {
+              console.warn('Could not save to localStorage:', err);
+            }
+          };
+          reader.readAsDataURL(file);
+        });
+
+        try {
+          const savedBg = localStorage.getItem('ppkdBackground');
+          if (savedBg) {
+            heroBg.style.backgroundImage = 'url(' + savedBg + ')';
+          }
+        } catch (err) {
+          console.warn('Could not load saved background:', err);
+        }
+      }
+
+      // Back to Top
+      (function createBackToTop() {
+        const btn = document.createElement('button');
+        btn.id = 'backToTop';
+        btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        document.body.appendChild(btn);
+
+        window.addEventListener('scroll', function() {
+          btn.classList.toggle('visible', window.scrollY > 500);
+        });
+
+        btn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+
+      // Scroll Progress
+      const progressBar = document.getElementById('progressBar') || (function() {
+        const div = document.createElement('div');
+        div.className = 'progress';
+        div.innerHTML = '<div class="bar" id="progressBar"></div>';
+        document.body.prepend(div);
+        return document.getElementById('progressBar');
+      })();
+
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        if (progressBar) progressBar.style.width = progress + '%';
+      }, { passive: true });
+
+      // Keyboard shortcuts: Home, End
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Home') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        if (e.key === 'End') { e.preventDefault(); window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' }); }
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            const navbarHeight = document.getElementById('navbar')?.offsetHeight || 72;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+
+      console.log('%c📖 PPKD Banten 2025 — Buku Lengkap (BAB 1-8)', 'font-size:20px;font-weight:bold;color:#B8893A;');
+      console.log('✨ Shortcut: Ctrl+Shift+U (Ganti Background Header)');
+      console.log('⌨️ Home = Scroll ke atas | End = Scroll ke bawah');
+      console.log('✅ Halaman siap digunakan!');
+    });
+  </script>
+
+</body>
+</html>
